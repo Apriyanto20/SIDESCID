@@ -9,19 +9,19 @@ const dataPotensi = [
   {
     id: 1,
     nama: "Pertanian Padi",
-    gambar: "/potensi/padi.jpg",
+    gambar: "/image/sawah.png",
     kategori: "Pertanian",
   },
   {
     id: 2,
     nama: "Kerajinan Anyaman",
-    gambar: "/potensi/anyaman.jpg",
+    gambar: "/image/anyaman.jpeg",
     kategori: "Kerajinan",
   },
   {
     id: 3,
     nama: "Wisata Curug Cidugaleun",
-    gambar: "/potensi/curug.jpg",
+    gambar: "/image/curug.jpeg",
     kategori: "Wisata",
   },
 ];
