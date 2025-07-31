@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <section className="bg-white pt-16 pb-24 px-4">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="inline-block border border-black rounded-full px-4 py-1 text-xs font-semibold tracking-wide uppercase mb-4">
+          <span className="inline-block border border-black rounded-full px-4 py-1 text-xs font-semibold tracking-wide uppercase mb-4 text-black">
             Rumah Dataku
           </span>
           <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-black">
