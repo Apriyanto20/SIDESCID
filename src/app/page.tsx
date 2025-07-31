@@ -4,17 +4,25 @@ import Image from 'next/image';
 import Navbar from './components/navbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { useEffect } from 'react';
 import 'swiper/css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 export default function HomePage() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-gray-50">
       <Navbar />
-
       {/* Hero Section */}
       <section
         className="relative h-screen bg-cover bg-center flex items-center justify-center text-center px-6"
-        style={{ backgroundImage: `url('/images/hero-desa.jpg')` }}
+        style={{ backgroundImage: `url('/images/hero-desa.jpg')` }} data-aos="fade-up"
       >
         <div className="z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
@@ -24,7 +32,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white pt-16 pb-24 px-4">
+      <section className="bg-white pt-16 pb-24 px-4" data-aos="zoom-in">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="inline-block border border-black rounded-full px-4 py-1 text-xs font-semibold tracking-wide uppercase mb-4 text-black">
             Rumah Dataku
@@ -122,7 +130,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#F6F4EF] py-20 px-4">
+      <section className="bg-[#F6F4EF] py-20 px-4" data-aos="zoom-in">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
@@ -292,5 +300,7 @@ export default function HomePage() {
         Layanan Whatsapp Bot
       </a>
     </div>
+
+    
   );
 }
