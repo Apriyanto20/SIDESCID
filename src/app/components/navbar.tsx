@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
             <li><Link href="/regulasi">Regulasi</Link></li>
 
             <li><a href="#">Berita</a></li>
-            <li><a href="#">Rumah Dataku</a></li>
+            <li><a href="/Rumah_Desaku">Rumah Dataku</a></li>
             <li><a href="#">SP4N LAPOR</a></li>
           </ul>
         </div>
