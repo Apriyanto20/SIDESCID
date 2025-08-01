@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
 import { FaChartBar, FaUserCheck, FaUsers, FaShieldAlt, FaBook, FaLeaf, FaBriefcase } from 'react-icons/fa';
-import DataCard from './components/DataCard';
-import DataKuantitas from './components/DataKuantitas';
-import DataKualitas from './components/DataKualitas';
-import DataMigrasi from './components/DataMigrasi';
-import DataPerlindunganSosial from './components/DataPerlindunganSosial';
-import DataAdministrasiKependudukan from './components/DataAdministrasiKependudukan';
+import DataCard from '../components/DataCard';
+import DataKuantitas from '../components/DataKuantitas';
+import DataKualitas from '../components/DataKualitas';
+import DataMigrasi from '../components/DataMigrasi';
+import DataPerlindunganSosial from '../components/DataPerlindunganSosial';
+import DataAdministrasiKependudukan from './DataAdministrasiKependudukan/page';
 import { motion } from 'framer-motion';
 
 export default function RumahDesaku() {
