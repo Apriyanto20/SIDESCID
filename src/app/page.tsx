@@ -2,14 +2,15 @@
 
 import Image from 'next/image';
 import Navbar from './components/navbar';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import { useEffect } from 'react';
 import 'swiper/css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
+import FloatingImage from "./components/FloatingImage";
+import FloatingProfileCard from "./components/FloatingProfileCard";
+import PerangkatDesaSection from "./components/PerangkatDesaSection";
 
 export default function HomePage() {
   useEffect(() => {
@@ -19,10 +20,11 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-gray-50">
       <Navbar />
+
       {/* Hero Section */}
       <section
         className="relative h-screen bg-cover bg-center flex items-center justify-center text-center px-6"
-        style={{ backgroundImage: `url('/images/hero-desa.jpg')` }} data-aos="fade-up"
+        style={{ backgroundImage: `url('/image/hero-desa.jpg')` }} data-aos="fade-up"
       >
         <div className="z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
@@ -32,6 +34,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Rumah Dataku Section */}
       <section className="bg-white pt-16 pb-24 px-4" data-aos="zoom-in">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="inline-block border border-black rounded-full px-4 py-1 text-xs font-semibold tracking-wide uppercase mb-4 text-black">
@@ -45,8 +48,8 @@ export default function HomePage() {
 
         <div className="bg-[#4BA380] rounded-[2rem] py-16 px-4">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            {/* Carousel (Kegiatan) */}
-            <div className="w-full aspect-[4/3] rounded-2xl shadow-xl overflow-hidden relative">
+            {/* Carousel */}
+            <div className="relative w-full aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
               <Swiper
                 spaceBetween={20}
                 slidesPerView={1}
@@ -54,43 +57,25 @@ export default function HomePage() {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 modules={[Autoplay]}
               >
-                <SwiperSlide>
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/logo-rumahdataku.jpg"
-                      alt="Logo Rumah Dataku"
-                      fill
-                      className="object-contain p-6 transition-transform duration-300 hover:scale-110"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/logo-rumahdataku.jpg"
-                      alt="Kegiatan 2"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/logo-rumahdataku.jpg"
-                      alt="Kegiatan 3"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
+                {[...Array(5)].map((_, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="relative w-full aspect-[4/3]">
+                      <Image
+                        src="/image/kegiatan.jpg"
+                        alt="Logo Rumah Dataku"
+                        fill
+                        className="object-contain p-6 transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
 
-            {/* Logo Rumah Dataku */}
+            {/* Logo Section */}
             <div className="w-full aspect-[4/3] rounded-2xl shadow-xl bg-white overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-2xl relative">
               <Image
-                src="/images/logo-rumahdataku.jpg"
+                src="/image/kegiatan.jpg"
                 alt="Logo Rumah Dataku"
                 fill
                 className="object-contain p-6 transition-transform duration-300 hover:scale-110"
@@ -102,7 +87,6 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto mt-16">
             <h2 className="text-white text-3xl font-semibold text-center mb-10">Statistik Desa</h2>
 
-            {/* Baris 1: Populasi & Keluarga */}
             <div className="flex flex-col md:flex-row gap-6 mb-6">
               <div className="flex-1 bg-white rounded-2xl shadow p-6 transition duration-300 hover:scale-105 hover:shadow-xl">
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Jumlah Populasi</h3>
@@ -114,7 +98,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Baris 2: Mata Pencaharian */}
             <div className="flex mb-6 gap-6">
               <div className="flex-1 bg-white rounded-2xl shadow p-6 transition duration-300 hover:scale-105 hover:shadow-xl">
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">Mata Pencaharian</h3>
@@ -126,166 +109,11 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      <section className="bg-[#F6F4EF] py-20 px-4" data-aos="zoom-in">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
-                Aparatur Desa<br />yang Siap Melayani
-              </h2>
-            </div>
-            <div className="mt-6 md:mt-0">
-              <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
-                Lihat Struktur Lengkap
-              </button>
-            </div>
-          </div>
-
-          {/* Scrollable Horizontal Cards */}
-          <div className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4">
-            {/* Card 1 */}
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kepala Desa"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Budi Santoso</h3>
-                <p className="text-sm text-gray-600 mb-4">Kepala Desa</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Sekretaris Desa"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Siti Aminah</h3>
-                <p className="text-sm text-gray-600 mb-4">Sekretaris Desa</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-            <div className="min-w-[280px] bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src="/images/logo.png"
-                alt="Kaur Keuangan"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">Joko Wibowo</h3>
-                <p className="text-sm text-gray-600 mb-4">Kaur Keuangan</p>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Lihat Profil
-                </button>
-              </div>
-            </div>
-
-            {/* Tambahkan card lain jika diperlukan */}
-          </div>
-        </div>
-      </section>
-
-
+      {/* Perangkat Desa Section */}
+      <PerangkatDesaSection />
 
       {/* WhatsApp Button */}
       <a
@@ -300,7 +128,5 @@ export default function HomePage() {
         Layanan Whatsapp Bot
       </a>
     </div>
-
-    
   );
 }

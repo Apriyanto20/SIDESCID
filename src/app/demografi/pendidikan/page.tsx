@@ -1,5 +1,7 @@
+
 import EducationChart from '../../components/EducationChart';
 import EducationTable from '../../components/EducationTable';
+
 
 const PendidikanPage = () => {
   return (

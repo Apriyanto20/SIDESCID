@@ -1,5 +1,6 @@
-import JobChart from '../../components/JobChart';
-import JobTable from '../../components/JobTable';
+
+import JobChart from '@app/app/components/JobChart';
+import JobTable from '@app/app/components/JobTable';
 
 export default function PekerjaanPage() {
   return (
