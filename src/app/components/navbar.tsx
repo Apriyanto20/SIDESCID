@@ -61,10 +61,10 @@ const Navbar: React.FC = () => {
             {isProfilOpen && (
               <ul className="absolute left-0 mt-2 bg-white rounded-xl shadow-md py-2 w-44 z-50 border">
                 <li>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setProfilOpen(false)}>Sejarah</Link>
+                  <Link href="/profil/sejarah" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setProfilOpen(false)}>Sejarah</Link>
                 </li>
                 <li>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setProfilOpen(false)}>Visi & Misi</Link>
+                  <Link href="/profil/visi-misi" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setProfilOpen(false)}>Visi & Misi</Link>
                 </li>
               </ul>
             )}
@@ -84,11 +84,11 @@ const Navbar: React.FC = () => {
             </button>
             {isDemografiOpen && (
               <ul className="absolute left-0 mt-2 bg-white rounded-xl shadow-md py-2 w-44 z-50 border">
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Pendidikan</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Pekerjaan</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Agama</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Jenis Kelamin</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Luas Wilayah</a></li>
+                <li><link href="/demografi/agama" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Agama</link></li>
+                <li><link href="/demografi/jeniskelamin" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Jenis Kelamin</link></li>
+                <li><link href="/demografi/pekerjaan" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Pekerjaan</link></li>
+                <li><link href="/demografi/pendidikan" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Pendidikan</link></li>
+                <li><link href="/demografi/umur" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Luas Wilayah</link></li>
               </ul>
             )}
           </div>
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <Link href="/regulasi" className="hover:text-teal-600 transition">Regulasi</Link>
-          <a href="#" className="hover:text-teal-600 transition">Berita</a>
+          <Link href="/berita" className="hover:text-teal-600 transition">Berita</Link>
           <Link href="/Rumah_Desaku" className="hover:text-teal-600 transition">Rumah Dataku</Link>
           <a href="#" className="hover:text-teal-600 transition">SP4N LAPOR</a>
         </nav>
@@ -156,8 +156,8 @@ const Navbar: React.FC = () => {
               </button>
               {isMobileDropdown.profil && (
                 <ul className="pl-4 space-y-1 mt-1">
-                  <li><a href="#">Sejarah</a></li>
-                  <li><a href="#">Visi & Misi</a></li>
+                  <li><Link href="/profil/sejarah">Sejarah</Link></li>
+                  <li><Link href="/profil/visi-misi">Visi & Misi</Link></li>
                 </ul>
               )}
             </li>
@@ -172,11 +172,11 @@ const Navbar: React.FC = () => {
               </button>
               {isMobileDropdown.demografi && (
                 <ul className="pl-4 space-y-1 mt-1">
-                  <li><a href="#">Pendidikan</a></li>
-                  <li><a href="#">Pekerjaan</a></li>
-                  <li><a href="#">Agama</a></li>
-                  <li><a href="#">Jenis Kelamin</a></li>
-                  <li><a href="#">Luas Wilayah</a></li>
+                  <li><Link href="/demografi/agama">Agama</Link></li>
+                  <li><Link href="/demografi/jeniskelamin">Jenis Kelamin</Link></li>
+                  <li><Link href="/demografi/pekerjaan">Pekerjaan</Link></li>
+                  <li><Link href="/demografi/pendidikan">Pendidikan</Link></li>
+                  <li><Link href="/demografi/umur">Umur</Link></li>
                 </ul>
               )}
             </li>
@@ -201,7 +201,7 @@ const Navbar: React.FC = () => {
             </li>
 
             <li><Link href="/regulasi">Regulasi</Link></li>
-            <li><a href="#">Berita</a></li>
+            <li><Link href="/berita">Berita</Link></li>
             <li><Link href="/Rumah_Desaku">Rumah Dataku</Link></li>
             <li><a href="#">SP4N LAPOR</a></li>
           </ul>
