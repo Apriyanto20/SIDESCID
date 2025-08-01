@@ -1,35 +1,35 @@
-'use client';
+// FloatingProfileCard.tsx
 import { motion } from "framer-motion";
-import Image from "next/image";
-import clsx from "clsx";
+
+interface FloatingProfileCardProps {
+    src: string;
+    name: string;
+    role: string;
+    style?: React.CSSProperties;
+}
 
 export default function FloatingProfileCard({
     src,
     name,
     role,
-    className,
     style,
-    size = 96,
-}: {
-    src: string;
-    name: string;
-    role: string;
-    className?: string;
-    style?: React.CSSProperties;
-    size?: number;
-}) {
+}: FloatingProfileCardProps) {
     return (
         <motion.div
             animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className={clsx("absolute flex flex-col items-center text-center", className)}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="absolute flex flex-col items-center text-center"
             style={style}
         >
-            <div className="rounded-full overflow-hidden border-4 border-white shadow-lg" style={{ width: size, height: size }}>
-                <Image src={src} alt={name} width={size} height={size} className="object-cover" />
+            <img
+                src={src}
+                alt={name}
+                className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
+            />
+            <div className="mt-2">
+                <h4 className="font-semibold text-sm">{name}</h4>
+                <p className="text-xs text-gray-500">{role}</p>
             </div>
-            <p className="mt-2 text-sm font-semibold text-gray-800">{name}</p>
-            <p className="text-xs text-gray-500">{role}</p>
         </motion.div>
     );
 }
