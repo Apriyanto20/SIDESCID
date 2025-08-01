@@ -1,18 +1,21 @@
-import React from "react";
-import Navbar from "./navbar";
+// app/profil/layout.tsx
+import { ReactNode } from "react";
+import Link from "next/link";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function ProfilLayout({ children }: { children: ReactNode }) {
   return (
-    <>
-      <Navbar />
-      <div className="pt-28 bg-gray-100 min-h-screen">
-        <main className="max-w-7xl mx-auto px-4 py-6">
-          {children}
-        </main>
-        <footer className="bg-blue-800 text-white text-center py-4 mt-12">
-          &copy; {new Date().getFullYear()} Desa Cidugaleun
-        </footer>
-      </div>
-    </>
+    <div className="min-h-screen bg-gray-100 font-sans">
+      {/* Navigasi Profil */}
+      <nav className="bg-green-700 text-white px-6 py-3">
+        <ul className="flex gap-6 text-sm font-semibold">
+          <li><Link href="/">Beranda</Link></li>
+          <li><Link href="/profil/profil-desa">Profil Desa</Link></li>
+          <li><Link href="/profil/sejarah">Sejarah</Link></li>
+          <li><Link href="/profil/visi-misi">Visi & Misi</Link></li>
+          <li><Link href="/profil/aparatur">Aparatur</Link></li>
+        </ul>
+      </nav>
+      <main className="p-6">{children}</main>
+    </div>
   );
 }
