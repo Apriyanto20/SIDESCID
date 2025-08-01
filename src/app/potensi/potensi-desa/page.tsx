@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Navbar from "@app/app/components/navbar";
 import { Sparkles, Filter, MapPin, Leaf, Palette, Camera } from "lucide-react";
 
 // Tipe data potensi
@@ -88,7 +87,6 @@ export default function PotensiDesa() {
         ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         <div className="absolute top-0 left-0 w-full z-20">
-          <Navbar />
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 leading-tight">

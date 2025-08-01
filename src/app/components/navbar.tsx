@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <img src="/images/logo.png" alt="Logo" className="w-8 h-8" />
+          <img src="/image/logo.png" alt="Logo" className="w-8 h-8" />
           <span className="text-lg md:text-xl font-bold text-gray-800">
             SIDES<span className="text-teal-600">CID</span>
           </span>
@@ -45,7 +45,6 @@ const Navbar: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-800">
           <Link href="/" className="hover:text-teal-600 transition">Beranda</Link>
-
           {/* Dropdown: Profil */}
           <div className="relative">
             <button
