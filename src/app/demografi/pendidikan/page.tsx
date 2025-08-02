@@ -1,5 +1,7 @@
-import EducationChart from '@app/app/components/EducationChart';
-import EducationTable from '@app/app/components/EducationTable';
+
+import EducationChart from '../../components/EducationChart';
+import EducationTable from '../../components/EducationTable';
+
 
 const PendidikanPage = () => {
   return (

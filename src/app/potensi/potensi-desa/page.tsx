@@ -1,8 +1,8 @@
 "use client";
+ge from "next/image";
 
-import { useState, useEffect, useMemo } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+
 import { Sparkles, Filter, MapPin, Leaf, Palette, Camera } from "lucide-react";
 import Navbar from "@app/app/components/navbar"; // pakai navbar lo yang udah ada
 
@@ -98,7 +98,10 @@ export default function PotensiDesa() {
       >
         <div className="absolute inset-0 bg-cover bg-center brightness-75" style={{ backgroundImage: "url('/image/banner.jpg')" }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
+
+        <div className="absolute top-0 left-0 w-full z-20">
+        </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 leading-tight">
             🌿 Potensi Desa Cidugaleun
           </h1>

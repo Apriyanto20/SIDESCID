@@ -8,7 +8,9 @@ export default function ProfilDesa() {
       <section
         className="w-full min-h-[400px] bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: "url('/image/pemandangan.jpg')",
+
+          backgroundImage: "url('/pemandangan.jpg')",
+
         }}
       >
         <h1 className="text-4xl font-bold text-white bg-black bg-opacity-50 p-4 rounded">
@@ -29,7 +31,10 @@ export default function ProfilDesa() {
           </div>
           <div className="md:w-1/2">
             <Image
+
+
               src="/image/pemandangan.jpg"
+
               alt="Pemandangan Desa"
               width={600}
               height={400}
