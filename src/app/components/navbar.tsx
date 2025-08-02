@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Pekerjaan</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Agama</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Jenis Kelamin</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Luas Wilayah</a></li>
+                <li><a href="/geografis" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setDemografiOpen(false)}>Luas Wilayah</a></li>
               </ul>
             )}
           </div>

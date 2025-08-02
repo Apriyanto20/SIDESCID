@@ -1,96 +1,103 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import FloatingProfileCard from "./FloatingProfileCard";
 
 const perangkatDesa = [
-    { nama: "Asep Surya", jabatan: "Kepala Desa", foto: "/images/logo.png" },
-    { nama: "Dewi Lestari", jabatan: "Sekretaris Desa", foto: "/images/logo.png" },
-    { nama: "Rudi Hartono", jabatan: "Kaur Keuangan", foto: "/images/logo.png" },
-    { nama: "Sinta Anggraini", jabatan: "Kaur Umum", foto: "/images/logo.png" },
-    { nama: "Budi Santoso", jabatan: "Kasi Pemerintahan", foto: "/images/logo.png" },
-    { nama: "Linda Sari", jabatan: "Kasi Pelayanan", foto: "/images/logo.png" },
+  { name: "Ahmad Rudi", role: "Kepala Desa", src: "/image/logo.png" },
+  { name: "Rina Marlina", role: "Sekretaris Desa", src: "/image/logo.png" },
+  { name: "Tina Nurhayati", role: "Kasi Pemerintahan", src: "/image/logo.png" },
+  { name: "Dedi Sunarya", role: "Kasi Pelayanan", src: "/image/logo.png" },
+  { name: "Siti Aisyah", role: "Kaur Keuangan", src: "/image/logo.png" },
+  { name: "Ujang Saputra", role: "Kaur Umum", src: "/image/logo.png" },
+  { name: "Nina Melani", role: "Kaur Perencanaan", src: "/image/logo.png" },
+  { name: "Rahmat Hidayat", role: "Kepala Dusun I", src: "/image/logo.png" },
+  { name: "Desi Marlina", role: "Kepala Dusun II", src: "/image/logo.png" },
+  { name: "Joko Priyono", role: "Staff Pelayanan Umum", src: "/image/logo.png" },
+  { name: "Dewi Kartika", role: "Operator SIKS-NG", src: "/image/logo.png" },
+  { name: "Yuni Astuti", role: "Pendamping PKH", src: "/image/logo.png" },
+  { name: "Andi Pratama", role: "Petugas Linmas", src: "/image/logo.png" },
+  { name: "Sopian", role: "Satlinmas", src: "/image/logo.png" },
 ];
 
-const radius = 150; // radius lingkaran
+export default function PerangkatDesaSection() {
+  const radius = 260;
+  const centerY = 450;
+  const centerXLeft = 90;
+  const centerXRight = 1010;
+  const angleOffset = Math.PI / 2;
 
-const generateCirclePositions = (count: number, radius: number) => {
-    const angleStep = (2 * Math.PI) / count;
-    return Array.from({ length: count }, (_, i) => {
-        const angle = i * angleStep - Math.PI / 2; // start dari atas
-        return {
-            x: radius * Math.cos(angle),
-            y: radius * Math.sin(angle),
-        };
-    });
-};
+  const total = perangkatDesa.length;
+  const mid = Math.ceil(total / 2);
+  const leftItems = perangkatDesa.slice(0, mid);
+  const rightItems = perangkatDesa.slice(mid);
 
-const PerangkatDesaLingkaran = () => {
-    const positions = generateCirclePositions(perangkatDesa.length, radius);
+  const renderCircle = (
+    items: typeof perangkatDesa,
+    centerX: number,
+    keyPrefix: string,
+    rotateClass: string
+  ) => (
+    <div
+      className="absolute"
+      style={{
+        width: radius * 2,
+        height: radius * 2,
+        left: `${centerX - radius}px`,
+        top: `${centerY - radius}px`,
+      }}
+    >
+      <div className={`w-full h-full rounded-full relative ${rotateClass}`}>
+        {items.map((item, i) => {
+          const angle = (2 * Math.PI * i) / items.length - angleOffset;
+          const x = radius + radius * Math.cos(angle);
+          const y = radius + radius * Math.sin(angle);
 
-    return (
-        <section className="relative py-32 bg-white">
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-6">
-                {/* Lingkaran Kiri */}
-                <div className="relative w-[400px] h-[400px]">
-                    {perangkatDesa.map((person, i) => (
-                        <div
-                            key={`left-${i}`}
-                            className="absolute flex flex-col items-center text-center"
-                            style={{
-                                left: `calc(50% + ${positions[i].x}px)`,
-                                top: `calc(50% + ${positions[i].y}px)`,
-                                transform: "translate(-50%, -50%)",
-                            }}
-                        >
-                            <Image
-                                src={person.foto}
-                                alt={person.nama}
-                                width={70}
-                                height={70}
-                                className="rounded-full border-2 border-white shadow-md"
-                            />
-                            <p className="text-sm font-medium mt-2">{person.nama}</p>
-                            <p className="text-xs text-gray-500">{person.jabatan}</p>
-                        </div>
-                    ))}
-                </div>
+          return (
+            <FloatingProfileCard
+              key={`${keyPrefix}-${item.name}`}
+              src={item.src}
+              name={item.name}
+              role={item.role}
+              style={{
+                position: "absolute",
+                left: `${x}px`,
+                top: `${y}px`,
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
 
-                {/* Teks Tengah */}
-                <div className="text-center max-w-sm">
-                    <h2 className="text-3xl font-bold mb-4">Perangkat Desa</h2>
-                    <p className="text-gray-700">
-                        Kami hadir untuk melayani masyarakat Desa Cidugaleun.
-                    </p>
-                </div>
+  return (
+    <section className="relative min-h-[1000px] bg-gray-50 overflow-hidden py-32">
+      {/* Left Circle */}
+      {renderCircle(leftItems, centerXLeft, "left", "hover:animate-[spinReverse_20s_linear_infinite]")}
 
-                {/* Lingkaran Kanan */}
-                <div className="relative w-[400px] h-[400px]">
-                    {perangkatDesa.map((person, i) => (
-                        <div
-                            key={`right-${i}`}
-                            className="absolute flex flex-col items-center text-center"
-                            style={{
-                                left: `calc(50% + ${positions[i].x}px)`,
-                                top: `calc(50% + ${positions[i].y}px)`,
-                                transform: "translate(-50%, -50%)",
-                            }}
-                        >
-                            <Image
-                                src={person.foto}
-                                alt={person.nama}
-                                width={70}
-                                height={70}
-                                className="rounded-full border-2 border-white shadow-md"
-                            />
-                            <p className="text-sm font-medium mt-2">{person.nama}</p>
-                            <p className="text-xs text-gray-500">{person.jabatan}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
+      {/* Right Circle */}
+      {renderCircle(rightItems, centerXRight, "right", "hover:animate-spinSlow")}
 
-export default PerangkatDesaLingkaran;
+      {/* Judul Tengah */}
+      <div
+        className="relative z-20 text-center max-w-2xl mx-auto"
+        data-aos="fade-up"
+        style={{
+          position: "absolute",
+          top: `${centerY - 220}px`,
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <div className="inline-flex items-center justify-center w-12 h-10 bg-purple-100 rounded-full mb-4">
+          👨‍💼
+        </div>
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">Perangkat Desa</h2>
+        <p className="text-lg text-gray-600">
+          Kami hadir untuk melayani masyarakat desa Cidugaleun.
+        </p>
+      </div>
+    </section>
+  );
+}
