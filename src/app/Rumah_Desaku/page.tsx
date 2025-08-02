@@ -3,12 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
 import { FaChartBar, FaUserCheck, FaUsers, FaShieldAlt, FaBook, FaLeaf, FaBriefcase } from 'react-icons/fa';
-import DataCard from './components/DataCard';
-import DataKuantitas from './components/DataKuantitas';
-import DataKualitas from './components/DataKualitas';
-import DataMigrasi from './components/DataMigrasi';
-import DataPerlindunganSosial from './components/DataPerlindunganSosial';
-import DataAdministrasiKependudukan from './components/DataAdministrasiKependudukan';
+import DataCard from './DataCard/page';
+import DataKuantitas from './DataKuantitas/page';
+import DataKualitas from './DataKualitas/page';
+import DataMigrasi from './DataMigrasi/page';
+import DataPerlindunganSosial from './DataPerlindunganSosial/page';
+import DataAdministrasiKependudukan from './DataAdministrasiKependudukan/page';
+import DataPotensiDesa from './PotensiDesa/page';
 import { motion } from 'framer-motion';
 
 export default function RumahDesaku() {
@@ -135,18 +136,16 @@ export default function RumahDesaku() {
                       Tentang Desa Kami
                     </h3>
                     <p className="text-gray-600">
-                      Desa yang berkomitmen untuk pengelolaan data yang akurat guna mendukung pembangunan berkelanjutan dan peningkatan kualitas hidup warga.
-                    </p>
+Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat. Desa ini dikenal dengan lingkungan alamnya yang asri, suasana yang sejuk, serta masyarakatnya yang ramah dan menjunjung tinggi nilai-nilai kebersamaan.                    </p>
                   </div>
 
                   <div className="p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
                       <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-                      Visi Rumah Dataku
+                      Visi Desa Kita
                     </h3>
                     <p className="text-gray-600">
-                      Menjadi pusat data terintegrasi yang mendukung perencanaan pembangunan berbasis data dan peningkatan pelayanan publik di tingkat desa.
-                    </p>
+"Mewujudkan Desa Cidugaleun sebagai desa yang transparan, informatif, dan partisipatif melalui penyajian data yang akurat, terbuka, dan mudah diakses oleh seluruh lapisan masyarakat."                    </p>
                   </div>
                 </div>
               </div>
@@ -169,7 +168,7 @@ export default function RumahDesaku() {
                         alt={image.alt}
                         className="w-full h-full object-cover"
                       />
-                      <motion.div 
+                      <motion.div
                         className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white"
                         initial={{ opacity: 1 }}
                         whileHover={{ opacity: 0.8 }}
@@ -234,6 +233,9 @@ export default function RumahDesaku() {
       )}
       {activePanel === 'administrasi' && (
         <DataAdministrasiKependudukan onClose={handleClosePanel} />
+      )}
+      {activePanel === 'potensi-desa' && (
+        <DataPotensiDesa onClose={handleClosePanel} />
       )}
     </div>
   );

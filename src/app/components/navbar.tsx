@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
           <Link href="/regulasi" className="hover:text-teal-600 transition">Regulasi</Link>
 
           <a href="#" className="hover:text-teal-600 transition">Berita</a>
-          <a href="#" className="hover:text-teal-600 transition">Rumah Dataku</a>
+          <a href="#" className="hover:text-teal-600 transition">Desa Kita</a>
           <a href="#" className="hover:text-teal-600 transition">SP4N LAPOR</a>
         </nav>
       </div>
