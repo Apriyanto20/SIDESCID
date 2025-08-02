@@ -39,16 +39,56 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-800">
+
           </div>
 
           <a href="#" className="hover:text-teal-600 transition">IDM</a>
           <a href="#" className="hover:text-teal-600 transition">Laporan APDES</a>
-          <a href="#" className="hover:text-teal-600 transition">Berita</a>
+
+          {/* Potensi (click dropdown) */}
+          <div className="relative">
+            <button
+              onClick={() => {
+                setProfilOpen(false);
+                setDemografiOpen(false);
+                setPotensiOpen(!isPotensiOpen);
+              }}
+              className="flex items-center gap-1 hover:text-teal-600 transition"
+            >
+              Potensi <ChevronDown className="w-4 h-4 mt-[1px]" />
+            </button>
+
+            {isPotensiOpen && (
+              <ul className="absolute left-0 mt-2 bg-white rounded-xl shadow-lg py-2 w-44 z-50 border">
+                <li>
+                  <Link
+                    href="/potensi/lapak"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setPotensiOpen(false)}
+                  >
+                    Lapak Desa
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/potensi/potensi-desa"
+                    className="block px-4 py-2 font-semibold text-teal-600 hover:bg-gray-100"
+                    onClick={() => setPotensiOpen(false)}
+                  >
+                    Potensi Desa
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+
+          <Link href="/regulasi" className="hover:text-teal-600 transition">Regulasi</Link>
+          <Link href="/berita" className="hover:text-teal-600 transition">Berita</Link>
+
           <Link href="/Rumah_Desaku" className="hover:text-teal-600 transition">Rumah Dataku</Link>
           <a href="#" className="hover:text-teal-600 transition">SP4N LAPOR</a>
         </nav>
       </div>
-
         </div>
       )}
     </header>
