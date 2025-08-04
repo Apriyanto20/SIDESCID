@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
 import { FaChartBar, FaUserCheck, FaUsers, FaShieldAlt, FaBook, FaLeaf, FaBriefcase } from 'react-icons/fa';
+
 import DataCard from './DataCard/page';
 import DataKuantitas from './DataKuantitas/page';
 import DataKualitas from './DataKualitas/page';
@@ -10,6 +11,7 @@ import DataMigrasi from './DataMigrasi/page';
 import DataPerlindunganSosial from './DataPerlindunganSosial/page';
 import DataAdministrasiKependudukan from './DataAdministrasiKependudukan/page';
 import DataPotensiDesa from './PotensiDesa/page';
+
 import { motion } from 'framer-motion';
 
 export default function RumahDesaku() {
@@ -136,7 +138,7 @@ export default function RumahDesaku() {
                       Tentang Desa Kami
                     </h3>
                     <p className="text-gray-600">
-Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat. Desa ini dikenal dengan lingkungan alamnya yang asri, suasana yang sejuk, serta masyarakatnya yang ramah dan menjunjung tinggi nilai-nilai kebersamaan.                    </p>
+                      Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat. Desa ini dikenal dengan lingkungan alamnya yang asri, suasana yang sejuk, serta masyarakatnya yang ramah dan menjunjung tinggi nilai-nilai kebersamaan.                    </p>
                   </div>
 
                   <div className="p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
@@ -145,7 +147,7 @@ Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang
                       Visi Desa Kita
                     </h3>
                     <p className="text-gray-600">
-"Mewujudkan Desa Cidugaleun sebagai desa yang transparan, informatif, dan partisipatif melalui penyajian data yang akurat, terbuka, dan mudah diakses oleh seluruh lapisan masyarakat."                    </p>
+                      "Mewujudkan Desa Cidugaleun sebagai desa yang transparan, informatif, dan partisipatif melalui penyajian data yang akurat, terbuka, dan mudah diakses oleh seluruh lapisan masyarakat."                    </p>
                   </div>
                 </div>
               </div>
@@ -160,8 +162,10 @@ Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang
                     <motion.div
                       key={index}
                       className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      whileHover={{
+                        scale: index === currentSlide ? 1.02 : 1, // Hanya scale jika slide aktif
+                        transition: { type: "spring", stiffness: 400, damping: 10 }
+                      }}
                     >
                       <img
                         src={image.src}
@@ -171,7 +175,9 @@ Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang
                       <motion.div
                         className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white"
                         initial={{ opacity: 1 }}
-                        whileHover={{ opacity: 0.8 }}
+                        whileHover={{
+                          opacity: index === currentSlide ? 0.8 : 1 // Hanya efek hover jika slide aktif
+                        }}
                       >
                         <p className="font-medium">{image.caption}</p>
                         <p className="text-sm">Desa Cidugaleun, Kec. Cigalontang</p>

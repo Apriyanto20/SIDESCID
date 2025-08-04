@@ -3,6 +3,24 @@
 @import 'swiper/css/pagination';
 @import 'swiper/css/navigation';
 
+@keyframes float1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.float-1 {
+  animation: float1 5s ease-in-out infinite;
+}
+
+.float-2 {
+  animation: float2 7s ease-in-out infinite;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -26,6 +44,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================== */
+/* 🌊 Animasi Background Air Terjun */
+/* =========================== */
+@keyframes waterfallFlow {
+  0% {
+    background-position: center 0%;
+  }
+  100% {
+    background-position: center 100%;
+  }
 }
 
 
