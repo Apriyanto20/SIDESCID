@@ -1,5 +1,5 @@
 // pages/profil/aparatur.tsx
-import Layout from "../../components/Layout";
+import Layout from "@app/app/layout";
 
 const aparaturData = [
   {

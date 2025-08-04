@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Layout from "@app/app/components/Layout";
+import Layout from "@app/app/layout";
 import Link from "next/link";
 
 // Tipe data produk

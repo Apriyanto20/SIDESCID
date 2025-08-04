@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import Layout from "@app/app/components/Layout";
+import Layout from "@app/app/layout";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";

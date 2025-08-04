@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Layout from "@app/app/components/Layout";
+import Layout from "@app/app/layout";
 import { BookOpen, Shield, Users, Building, MessageCircle, Search } from "lucide-react";
 
 // Tipe data regulasi
