@@ -39,9 +39,6 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-800">
-
-          </div>
-
           <a href="#" className="hover:text-teal-600 transition">IDM</a>
           <a href="#" className="hover:text-teal-600 transition">Laporan APDES</a>
 
