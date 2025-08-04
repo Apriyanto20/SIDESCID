@@ -8,8 +8,6 @@ import { useEffect } from 'react';
 import 'swiper/css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import FloatingImage from "./components/FloatingImage";
-import FloatingProfileCard from "./components/FloatingProfileCard";
 import PerangkatDesaSection from "./components/PerangkatDesaSection";
 
 export default function HomePage() {
