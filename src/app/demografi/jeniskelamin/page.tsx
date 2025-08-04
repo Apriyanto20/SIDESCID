@@ -1,28 +1,59 @@
 "use client";
 
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+} from "recharts";
 import type { PieLabelRenderProps } from "recharts";
 
-const data = [
-  { name: "Laki-laki", value: 1200, color: "#3b82f6" },
-  { name: "Perempuan", value: 1100, color: "#93c5fd" },
-];
-
 export default function JenisKelaminPage() {
-  const totalPenduduk = data.reduce((sum, item) => sum + item.value, 0);
+  // Data per dusun
+  const dusunData = [
+    { dusun: "Cidugaleun", laki: 948, perempuan: 851 },
+    { dusun: "Pasirpari", laki: 603, perempuan: 575 },
+    { dusun: "Panganten", laki: 983, perempuan: 739 },
+    { dusun: "Cisolok", laki: 767, perempuan: 739 },
+  ];
 
-  // ✅ Label pie chart aman tanpa error percent
+  // Hitung total
+  const totalLaki = dusunData.reduce((sum, item) => sum + item.laki, 0);
+  const totalPerempuan = dusunData.reduce((sum, item) => sum + item.perempuan, 0);
+  const totalPenduduk = totalLaki + totalPerempuan;
+
+  // Data untuk Pie Chart
+  const chartData = [
+    { name: "Laki-laki", value: totalLaki, color: "#3b82f6" },
+    { name: "Perempuan", value: totalPerempuan, color: "#93c5fd" },
+  ];
+
+  // Data untuk Bar Chart
+  const barData = dusunData.map((item) => ({
+    name: item.dusun,
+    Laki: item.laki,
+    Perempuan: item.perempuan,
+  }));
+
+  // Label pie chart
   const renderLabel = ({ name, percent }: PieLabelRenderProps) =>
     `${name}: ${((percent ?? 0) * 100).toFixed(1)}%`;
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Modern Header */}
+      {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-500 py-16 text-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Distribusi Jenis Kelamin</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Komposisi penduduk Desa Cidugaleun berdasarkan gender
+            Komposisi penduduk Desa Cidugaleun berdasarkan gender per dusun
           </p>
           <div className="w-24 h-1 bg-blue-300 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -35,63 +66,55 @@ export default function JenisKelaminPage() {
             <div className="p-8 border-b border-gray-100">
               <h2 className="text-2xl font-semibold text-gray-800 flex items-center">
                 <span className="w-4 h-4 rounded-full bg-blue-500 mr-3"></span>
-                Data Statistik
+                Data Statistik per Dusun
               </h2>
             </div>
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
+              <table className="min-w-full divide-y divide-gray-200 text-center">
                 <thead className="bg-blue-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-blue-600 uppercase">
-                      Jenis Kelamin
+                    <th className="px-6 py-3 text-xs font-medium text-blue-600 uppercase">
+                      Dusun
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-blue-600 uppercase">
+                    <th className="px-6 py-3 text-xs font-medium text-blue-600 uppercase">
+                      Laki-laki
+                    </th>
+                    <th className="px-6 py-3 text-xs font-medium text-blue-600 uppercase">
+                      Perempuan
+                    </th>
+                    <th className="px-6 py-3 text-xs font-medium text-blue-600 uppercase">
                       Jumlah
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-blue-600 uppercase">
-                      Persentase
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {data.map((item) => (
-                    <tr key={item.name} className="hover:bg-blue-50 transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <span
-                            className={`w-3 h-3 rounded-full mr-3 ${
-                              item.name === "Laki-laki" ? "bg-blue-600" : "bg-blue-300"
-                            }`}
-                          ></span>
-                          <span className="font-medium text-gray-800">{item.name}</span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-gray-700">{item.value.toLocaleString()}</td>
-                      <td className="px-6 py-4 text-gray-700">
-                        {((item.value / totalPenduduk) * 100).toFixed(1)}%
+                  {dusunData.map((item) => (
+                    <tr key={item.dusun} className="hover:bg-blue-50 transition-colors">
+                      <td className="px-6 py-4 font-medium text-gray-800">{item.dusun}</td>
+                      <td className="px-6 py-4 text-gray-700">{item.laki.toLocaleString()}</td>
+                      <td className="px-6 py-4 text-gray-700">{item.perempuan.toLocaleString()}</td>
+                      <td className="px-6 py-4 font-semibold text-gray-800">
+                        {(item.laki + item.perempuan).toLocaleString()}
                       </td>
                     </tr>
                   ))}
-                </tbody>
-                <tfoot className="bg-blue-50">
-                  <tr>
-                    <td className="px-6 py-4 font-semibold text-gray-800">Total</td>
-                    <td className="px-6 py-4 font-semibold text-gray-800">
-                      {totalPenduduk.toLocaleString()}
-                    </td>
-                    <td className="px-6 py-4 font-semibold text-gray-800">100%</td>
+                  <tr className="bg-blue-50 font-semibold">
+                    <td className="px-6 py-4 text-gray-800">Total</td>
+                    <td className="px-6 py-4 text-gray-800">{totalLaki.toLocaleString()}</td>
+                    <td className="px-6 py-4 text-gray-800">{totalPerempuan.toLocaleString()}</td>
+                    <td className="px-6 py-4 text-gray-800">{totalPenduduk.toLocaleString()}</td>
                   </tr>
-                </tfoot>
+                </tbody>
               </table>
             </div>
           </div>
 
-          {/* Chart Card */}
+          {/* Pie Chart Card */}
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 flex items-center">
                 <span className="w-4 h-4 rounded-full bg-blue-500 mr-3"></span>
-                Visualisasi Data
+                Visualisasi Gender
               </h2>
               <span className="text-sm text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
                 {totalPenduduk.toLocaleString()} Total
@@ -101,7 +124,7 @@ export default function JenisKelaminPage() {
               <ResponsiveContainer>
                 <PieChart>
                   <Pie
-                    data={data}
+                    data={chartData}
                     cx="50%"
                     cy="50%"
                     innerRadius={60}
@@ -111,7 +134,7 @@ export default function JenisKelaminPage() {
                     label={renderLabel}
                     labelLine={false}
                   >
-                    {data.map((entry, index) => (
+                    {chartData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} stroke="#fff" strokeWidth={2} />
                     ))}
                   </Pie>
@@ -131,6 +154,27 @@ export default function JenisKelaminPage() {
             <div className="mt-4 text-sm text-gray-500 text-center">
               * Distribusi gender penduduk Desa Cidugaleun
             </div>
+          </div>
+        </div>
+
+        {/* Bar Chart Per Dusun */}
+        <div className="mt-12 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+            <span className="w-4 h-4 rounded-full bg-blue-500 mr-3"></span>
+            Perbandingan Gender per Dusun
+          </h2>
+          <div className="h-96 w-full">
+            <ResponsiveContainer>
+              <BarChart data={barData} margin={{ top: 20, right: 30, left: 0, bottom: 20 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Laki" fill="#3b82f6" />
+                <Bar dataKey="Perempuan" fill="#93c5fd" />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
 
@@ -156,9 +200,9 @@ export default function JenisKelaminPage() {
             <div>
               <h3 className="text-xl font-semibold text-blue-800 mb-3">Komposisi Gender</h3>
               <p className="text-blue-700">
-                Rasio gender Desa Cidugaleun menunjukkan {data[0].name}{" "}
-                {((data[0].value / totalPenduduk) * 100).toFixed(1)}% dan {data[1].name}{" "}
-                {((data[1].value / totalPenduduk) * 100).toFixed(1)}% dari total penduduk.
+                Rasio gender Desa Cidugaleun menunjukkan Laki-laki{" "}
+                {((totalLaki / totalPenduduk) * 100).toFixed(1)}% dan Perempuan{" "}
+                {((totalPerempuan / totalPenduduk) * 100).toFixed(1)}% dari total penduduk.
               </p>
             </div>
           </div>
