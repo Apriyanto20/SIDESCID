@@ -19,7 +19,7 @@ export default function JobTable() {
             <th className="p-3 border">Jenis Pekerjaan</th>
             <th className="p-3 border">Jumlah</th>
           </tr>
-        </thead>
+        </thead>/
         <tbody>
           {jobData.map((item, index) => (
             <tr key={index} className="hover:bg-gray-50">

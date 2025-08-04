@@ -1,14 +1,7 @@
 "use client";
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import Layout from "@app/app/layout";
-=======
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import Navbar from "@app/app/components/navbar"; // pakai navbar lo yang udah ada
-import Image from "next/image";
->>>>>>> 36cfcb8fe5f8aa289899143972f96d9ca0f5d6d9
 import { BookOpen, Shield, Users, Building, MessageCircle, Search } from "lucide-react";
 
 // ---------- Tipe data regulasi ----------
@@ -114,6 +107,14 @@ export default function RegulasiDesa() {
   const debouncedSearch = useDebounce(search, 180);
   const debouncedFilter = useDebounce(filter, 100);
 
+  const kategoriList: Array<"Semua" | Regulasi["kategori"]> = [
+    "Semua",
+    "Umum",
+    "UMKM",
+    "Lingkungan",
+    "Wisata",
+  ];
+
   const filtered = useMemo(() => {
     return dataRegulasi.filter((item) => {
       const matchesFilter = debouncedFilter === "Semua" || item.kategori === debouncedFilter;
@@ -132,8 +133,6 @@ export default function RegulasiDesa() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-100 to-white">
-      <Navbar />
-
       <div className="pt-35 max-w-4xl mx-auto px-5 py-10 pb-32">
         {/* Header */}
         <div
@@ -177,10 +176,10 @@ export default function RegulasiDesa() {
             </div>
             {/* Filter */}
             <div className="flex flex-wrap gap-2 items-center">
-              {["Semua", "Umum", "UMKM", "Lingkungan", "Wisata"].map((kat, i) => (
+              {kategoriList.map((kat, i) => (
                 <button
                   key={kat}
-                  onClick={() => setFilter(kat as any)}
+                  onClick={() => setFilter(kat)}
                   className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 flex items-center gap-1 ${
                     filter === kat
                       ? "bg-teal-500 text-white border-teal-500"
@@ -213,7 +212,6 @@ export default function RegulasiDesa() {
                 } hover:scale-[1.025] hover:shadow-2xl relative overflow-hidden`}
                 style={{ transitionDelay: `${400 + idx * 100}ms` }}
               >
-                {/* glow overlay on hover */}
                 <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-transparent to-sky-50 opacity-0 transition duration-500 group-hover:opacity-60 mix-blend-screen"></div>
 
                 <div className="flex flex-col sm:flex-row justify-between gap-4 relative">
@@ -228,7 +226,6 @@ export default function RegulasiDesa() {
                       </span>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-500 self-start">{/* optional extra */}</div>
                 </div>
 
                 <p className="text-gray-700 mt-4 leading-relaxed">{reg.ringkasan}</p>
@@ -277,7 +274,8 @@ export default function RegulasiDesa() {
         >
           <h3 className="font-bold text-gray-800">💡 Ini Bukan Hukum Kaku</h3>
           <p className="text-gray-700 text-sm mt-1">
-            Aturan ini dibuat untuk menjaga keharmonisan, kelestarian, dan kemajuan bersama. Kalau ada masukan atau revisi, sampaikan ke BPD atau lewat musyawarah RT/RW.
+            Aturan ini dibuat untuk menjaga keharmonisan, kelestarian, dan kemajuan bersama.
+            Kalau ada masukan atau revisi, sampaikan ke BPD atau lewat musyawarah RT/RW.
           </p>
         </div>
       </div>
@@ -295,7 +293,6 @@ export default function RegulasiDesa() {
         </span>
       </a>
 
-      {/* CSS tambahan */}
       <style jsx>{`
         @keyframes bounce-slow {
           0%,

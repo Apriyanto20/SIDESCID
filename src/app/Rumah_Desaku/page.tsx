@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 import { FaChartBar, FaUserCheck, FaUsers, FaShieldAlt, FaBook, FaLeaf, FaBriefcase } from 'react-icons/fa';
 import DataCard from '../components/DataCard';
 import DataKuantitas from '../components/DataKuantitas';
@@ -96,7 +96,7 @@ export default function RumahDesaku() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Main Content */}
       <main className="pt-24 pb-12 px-4">
