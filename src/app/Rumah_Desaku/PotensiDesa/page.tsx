@@ -31,11 +31,11 @@ interface DataPotensiDesaProps {
 }
 
 const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
-  // Data configuration
+  // Data configuration for Desa Cidugaleun
   const ekonomiData = {
-    labels: ['Pertanian', 'Perkebunan', 'Peternakan', 'UMKM', 'Wisata'],
+    labels: ['Pertanian', 'Perkebunan', 'Peternakan', 'UMKM', 'Lainnya'],
     datasets: [{
-      data: [45, 30, 15, 25, 10],
+      data: [45, 26, 15, 12, 2], // Based on occupation data from PDF
       backgroundColor: [
         'rgba(74, 222, 128, 0.8)',
         'rgba(250, 176, 5, 0.8)',
@@ -54,10 +54,11 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
     }],
   };
 
+  // Product data for Desa Cidugaleun
   const produkData = {
-    labels: ['Beras Organik', 'Kopi Arabika', 'Madu Kelulut', 'Kerajinan Bambu', 'Dodol Garut'],
+    labels: ['Beras Sawah', 'Perkebunan Rakyat', 'Ternak Kambing', 'Ayam Kampung', 'Kerajinan'],
     datasets: [{
-      data: [35, 25, 20, 15, 5],
+      data: [40, 25, 15, 12, 8], // Based on production data
       backgroundColor: 'rgba(99, 102, 241, 0.7)',
       borderColor: 'rgba(99, 102, 241, 1)',
       borderWidth: 1,
@@ -65,10 +66,11 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
     }],
   };
 
+  // Natural resources data (1,179.37 Ha total area)
   const sdaData = {
-    labels: ['Sawah', 'Kebun', 'Hutan', 'Sungai', 'Lahan Tidur'],
+    labels: ['Sawah (264 Ha)', 'Perkebunan (309 Ha)', 'Hutan Rakyat (150 Ha)', 'Pemukiman (46 Ha)', 'Fasilitas Umum (21 Ha)'],
     datasets: [{
-      data: [120, 85, 65, 45, 30],
+      data: [264.37, 309.40, 150.49, 46.31, 20.51],
       backgroundColor: [
         'rgba(16, 185, 129, 0.7)',
         'rgba(245, 158, 11, 0.7)',
@@ -151,115 +153,113 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
     }
   };
 
-  // Stats cards data
+  // Stats cards data for Desa Cidugaleun
   const stats = [
     {
       title: "Luas Wilayah",
-      value: "320 Ha",
+      value: "1,179 Ha",
       icon: <FiMapPin className="w-5 h-5" />,
       color: "text-emerald-600",
       bg: "bg-emerald-50"
     },
     {
-      title: "UMKM Terdaftar",
-      value: "28 Unit",
-      icon: <FiDollarSign className="w-5 h-5" />,
-      color: "text-orange-600",
-      bg: "bg-orange-50"
+      title: "Jumlah Penduduk",
+      value: "6,378 Jiwa",
+      icon: <FiUsers className="w-5 h-5" />,
+      color: "text-blue-600",
+      bg: "bg-blue-50"
     },
     {
       title: "Produk Unggulan",
-      value: "5 Jenis",
+      value: "5 Komoditas",
       icon: <FiPackage className="w-5 h-5" />,
       color: "text-indigo-600",
       bg: "bg-indigo-50"
     },
     {
-      title: "Pertumbuhan Ekonomi",
-      value: "5.2%",
+      title: "Ternak Kambing",
+      value: "4,693 Ekor",
       icon: <FiTrendingUp className="w-5 h-5" />,
-      color: "text-blue-600",
-      bg: "bg-blue-50"
+      color: "text-amber-600",
+      bg: "bg-amber-50"
     }
   ];
 
-  // Product data
+  // Product data for Desa Cidugaleun
   const products = [
     {
-      name: "Beras Organik",
-      desc: "Beras sehat tanpa pestisida dari sawah organik desa",
+      name: "Beras Sawah",
+      desc: "Hasil dari 264 Ha sawah irigasi",
       icon: <FiPackage className="text-emerald-500" />,
       color: "bg-emerald-100"
     },
     {
-      name: "Kopi Arabika",
-      desc: "Kopi khas dari perkebunan warga dengan cita rasa tinggi",
+      name: "Perkebunan Rakyat",
+      desc: "Hasil dari 309 Ha lahan perkebunan",
       icon: <FiCoffee className="text-amber-500" />,
       color: "bg-amber-100"
     },
     {
-      name: "Madu Kelulut",
-      desc: "Madu alami dari lebah kelulut yang dibudidayakan warga",
-      icon: <FiDroplet className="text-yellow-500" />,
-      color: "bg-yellow-100"
+      name: "Ternak Kambing",
+      desc: "4,693 ekor kambing warga",
+      icon: <FiDroplet className="text-red-500" />,
+      color: "bg-red-100"
     },
     {
-      name: "Kerajinan Bambu",
-      desc: "Produk kerajinan tangan dari bambu berkualitas",
-      icon: <FiPackage className="text-green-500" />,
-      color: "bg-green-100"
+      name: "Ayam Kampung",
+      desc: "7,962 ekor ayam kampung",
+      icon: <FiPackage className="text-yellow-500" />,
+      color: "bg-yellow-100"
     }
   ];
 
-  // Fasilitas Desa data
+  // Village facilities for Desa Cidugaleun
   const facilities = [
     {
-      name: "Puskesmas",
-      desc: "Pusat Kesehatan Masyarakat dengan fasilitas dasar",
+      name: "Puskesmas Pembantu",
+      desc: "1 unit melayani 6,378 penduduk",
       icon: <FiHeart className="text-red-500" />,
       color: "bg-red-100"
     },
     {
       name: "Sekolah Dasar",
-      desc: "SD Negeri dengan 6 ruang kelas dan perpustakaan",
+      desc: "5 SD Negeri di wilayah desa",
       icon: <FiBook className="text-blue-500" />,
       color: "bg-blue-100"
     },
-   
- {
-  name: "Masjid",
-  desc: "Tempat ibadah umat Islam dengan fasilitas mushola dan tempat wudhu",
-  icon: <MdMosque className="text-green-500" />,
-  color: "bg-green-100"
-},
+    {
+      name: "Masjid & Mushola",
+      desc: "14 masjid dan 27 mushola",
+      icon: <MdMosque className="text-green-500" />,
+      color: "bg-green-100"
+    },
     {
       name: "Posyandu",
-      desc: "Pos Pelayanan Terpadu untuk balita dan lansia",
+      desc: "6 posyandu tersebar di 4 dusun",
       icon: <FiUsers className="text-pink-500" />,
       color: "bg-pink-100"
     },
-    
     {
       name: "Jalan Desa",
-      desc: "Jalan aspal sepanjang 12 km menghubungkan dusun",
+      desc: "5.5 km jalan aspal desa",
       icon: <FiTruck className="text-amber-500" />,
       color: "bg-amber-100"
     },
     {
-      name: "Internet Desa",
-      desc: "Akses WiFi gratis di balai desa dan sekolah",
-      icon: <FiWifi className="text-indigo-500" />,
+      name: "BUMDes",
+      desc: "1 Badan Usaha Milik Desa",
+      icon: <FiDollarSign className="text-indigo-500" />,
       color: "bg-indigo-100"
     },
     {
       name: "Balai Desa",
-      desc: "Gedung serbaguna untuk kegiatan masyarakat",
+      desc: "1 unit balai desa multifungsi",
       icon: <FiHome className="text-green-500" />,
       color: "bg-green-100"
     },
     {
-      name: "Listrik Desa",
-      desc: "100% rumah telah teraliri listrik PLN",
+      name: "Lapangan Olahraga",
+      desc: "1 lapangan sepak bola dan 3 voli",
       icon: <FiZap className="text-yellow-500" />,
       color: "bg-yellow-100"
     }
@@ -285,7 +285,7 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
             <div className="flex justify-between items-start mb-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Potensi Desa Cidugaleun</h2>
-                <p className="text-gray-500 mt-1">Kecamatan Cigalontang, Kabupaten Tasikmalaya</p>
+                <p className="text-gray-500 mt-1">Kecamatan Cigalontang, Kabupaten Tasikmalaya - 2024</p>
               </div>
               <button
                 onClick={onClose}
@@ -326,52 +326,34 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
                     <div className="p-2 rounded-lg bg-emerald-100 text-emerald-600 mr-3">
                       <FiDollarSign className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-800">Potensi Ekonomi Desa</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">Struktur Ekonomi Desa</h3>
                   </div>
                   <div className="h-64 md:h-72">
-  <Doughnut
-    data={ekonomiData}
-    options={{
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'right',
-          labels: {
-            usePointStyle: true,
-            padding: 20,
-            color: '#64748b',
-            font: {
-              family: 'Inter, sans-serif'
-            }
-          }
-        },
-        tooltip: {
-          backgroundColor: '#1f2937',
-          titleColor: '#ffffff',
-          bodyColor: '#ffffff',
-          padding: 12,
-          cornerRadius: 8,
-          displayColors: true,
-          callbacks: {
-            label: (context) => {
-              const label = context.label || '';
-              const value = context.raw as number;
-              const total = (context.dataset.data as number[]).reduce((a, b) => a + b, 0);
-              const percentage = Math.round((value / total) * 100);
-              return `${label}: ${value}% (${percentage}% of total)`;
-            }
-          }
-        }
-      },
-      cutout: '60%'
-    }}
-  />
-</div>
+                    <Doughnut
+                      data={ekonomiData}
+                      options={{
+                        ...chartOptions,
+                        plugins: {
+                          ...chartOptions.plugins,
+                          tooltip: {
+                            ...chartOptions.plugins?.tooltip,
+                            callbacks: {
+                              label: (context) => {
+                                const label = context.label || '';
+                                const value = context.raw as number;
+                                return `${label}: ${value}%`;
+                              }
+                            }
+                          }
+                        },
+                        cutout: '60%'
+                      }}
+                    />
+                  </div>
                   <div className="mt-4 p-3 bg-emerald-50 rounded-lg">
                     <p className="text-sm text-gray-700">
-                      Sektor pertanian mendominasi dengan kontribusi 45%, diikuti oleh perkebunan (30%) dan UMKM (25%). 
-                      Potensi wisata masih berkembang dengan kontribusi 10%.
+                      Sektor pertanian (45%) dan perkebunan (26%) menjadi tulang punggung ekonomi desa.
+                      Peternakan menyumbang 15% dan UMKM 12% dari aktivitas ekonomi warga.
                     </p>
                   </div>
                 </div>
@@ -382,7 +364,7 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
                     <div className="p-2 rounded-lg bg-indigo-100 text-indigo-600 mr-3">
                       <FiPackage className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-800">Produk Unggulan Desa</h3>
+                    <h3 className="text-lg font-semibold text-gray-800">Produksi Unggulan Desa</h3>
                   </div>
                   <div className="h-64 md:h-72">
                     <Bar
@@ -394,6 +376,16 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
                           ...chartOptions.plugins,
                           legend: {
                             display: false
+                          },
+                          tooltip: {
+                            ...chartOptions.plugins?.tooltip,
+                            callbacks: {
+                              label: (context) => {
+                                const label = context.label || '';
+                                const value = context.raw as number;
+                                return `${label}: ${value}% dari total produksi`;
+                              }
+                            }
                           }
                         }
                       }}
@@ -401,8 +393,8 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
                   </div>
                   <div className="mt-4 p-3 bg-indigo-50 rounded-lg">
                     <p className="text-sm text-gray-700">
-                      Beras Organik menjadi produk utama dengan nilai penjualan tertinggi (35%), 
-                      diikuti oleh Kopi Arabika (25%) dan Madu Kelulut (20%).
+                      Beras sawah mendominasi produksi (40%), diikuti perkebunan rakyat (25%) dan ternak kambing (15%).
+                      Ayam kampung menyumbang 12% dari produk unggulan desa.
                     </p>
                   </div>
                 </div>
@@ -414,35 +406,35 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
                   <div className="p-2 rounded-lg bg-green-100 text-green-600 mr-3">
                     <FiMapPin className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800">Sumber Daya Alam</h3>
+                  <h3 className="text-lg font-semibold text-gray-800">Penggunaan Lahan Desa (Ha)</h3>
                 </div>
                 <div className="h-64 md:h-72">
                   <Pie 
                     data={sdaData} 
                     options={{
                       ...chartOptions,
-                     plugins: {
-  ...chartOptions.plugins,
-  tooltip: {
-    ...(chartOptions.plugins?.tooltip as any),
-    callbacks: {
-      label: function(context: any) {
-        const label = context.label || '';
-        const value = context.raw;
-        const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0);
-        const percentage = Math.round((value / total) * 100);
-        return `${label}: ${value} Ha (${percentage}%)`;
-      }
-    }
-  }
-} as ChartOptions<'pie'>['plugins']
+                      plugins: {
+                        ...chartOptions.plugins,
+                        tooltip: {
+                          ...chartOptions.plugins?.tooltip,
+                          callbacks: {
+                            label: (context) => {
+                              const label = context.label || '';
+                              const value = context.raw as number;
+                              const total = (context.dataset.data as number[]).reduce((a, b) => a + b, 0);
+                              const percentage = Math.round((value / total) * 100);
+                              return `${label}: ${value} Ha (${percentage}%)`;
+                            }
+                          }
+                        }
+                      }
                     }} 
                   />
                 </div>
                 <div className="mt-4 p-3 bg-green-50 rounded-lg">
                   <p className="text-sm text-gray-700">
-                    Lahan sawah mendominasi (120 Ha), diikuti kebun (85 Ha) dan hutan (65 Ha). 
-                    Lahan tidur masih tersedia 30 Ha yang berpotensi untuk dikembangkan.
+                    Lahan sawah (264 Ha) dan perkebunan (309 Ha) mendominasi. Hutan rakyat seluas 150 Ha,
+                    pemukiman 46 Ha, dan fasilitas umum 21 Ha dari total 1,179 Ha wilayah desa.
                   </p>
                 </div>
               </div>
@@ -450,7 +442,7 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
 
             {/* Produk Unggulan Section */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-6 text-gray-800">Detail Produk Unggulan</h3>
+              <h3 className="text-xl font-semibold mb-6 text-gray-800">Komoditas Unggulan Desa Cidugaleun</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {products.map((product, index) => (
                   <motion.div
@@ -470,7 +462,7 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
 
             {/* Fasilitas Desa Section */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-6 text-gray-800">Fasilitas Desa</h3>
+              <h3 className="text-xl font-semibold mb-6 text-gray-800">Infrastruktur & Fasilitas Desa</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {facilities.map((facility, index) => (
                   <motion.div
@@ -496,14 +488,14 @@ const DataPotensiDesa: React.FC<DataPotensiDesaProps> = ({ onClose }) => {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium text-blue-700 mb-2">Bidang Ekonomi & UMKM</h4>
-                  <p className="text-gray-700">Bapak Asep - 0812-3456-7890</p>
-                  <p className="text-gray-700">Ibu Nining - 0856-7890-1234</p>
+                  <h4 className="font-medium text-blue-700 mb-2">Bidang Pertanian & Perkebunan</h4>
+                  <p className="text-gray-700">Bapak Engkus (Kadus 01 Cidugaleun)</p>
+                  <p className="text-gray-700">Kelompok Tani: 11 kelompok</p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-blue-700 mb-2">Bidang Pariwisata</h4>
-                  <p className="text-gray-700">Bapak Dedi - 0821-2345-6789</p>
-                  <p className="text-gray-700">Email: potensidesa@cidugaleun.desa.id</p>
+                  <h4 className="font-medium text-blue-700 mb-2">Bidang UMKM & BUMDes</h4>
+                  <p className="text-gray-700">Ibu Anis Suryani (Bendahara Desa)</p>
+                  <p className="text-gray-700">Email: desa.cidugaleun015@gmail.com</p>
                 </div>
               </div>
             </div>

@@ -31,13 +31,13 @@ interface DataAdministrasiProps {
 }
 
 const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose }) => {
-  // Data dokumen per tahun
+  // Data dokumen per tahun - adjusted for Desa Cidugaleun
   const dokumenTahunanData: ChartData<'bar'> = {
-    labels: ['2019', '2020', '2021', '2022', '2023'],
+    labels: ['2020', '2021', '2022', '2023', '2024'],
     datasets: [
       {
         label: 'KTP Elektronik',
-        data: [120, 150, 180, 210, 250],
+        data: [1500, 1800, 2100, 2500, 2800],
         backgroundColor: 'rgba(101, 163, 255, 0.7)',
         borderColor: 'rgba(101, 163, 255, 1)',
         borderWidth: 2,
@@ -45,7 +45,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
       },
       {
         label: 'Kartu Keluarga',
-        data: [80, 90, 100, 110, 120],
+        data: [450, 500, 550, 600, 650],
         backgroundColor: 'rgba(120, 111, 255, 0.7)',
         borderColor: 'rgba(120, 111, 255, 1)',
         borderWidth: 2,
@@ -54,11 +54,11 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
     ],
   };
 
-  // Data jenis dokumen
+  // Data jenis dokumen - adjusted for Desa Cidugaleun (total penduduk 6,378)
   const jenisDokumenData: ChartData<'pie'> = {
     labels: ['KTP Elektronik', 'Kartu Keluarga', 'Akta Kelahiran', 'Akta Kematian'],
     datasets: [{
-      data: [920, 520, 180, 45],
+      data: [5200, 1300, 180, 45], // Adjusted to match population
       backgroundColor: [
         'rgba(101, 163, 255, 0.7)',
         'rgba(120, 111, 255, 0.7)',
@@ -75,12 +75,12 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
     }],
   };
 
-  // Data proses dokumen
+  // Data proses dokumen - adjusted for Desa Cidugaleun
   const prosesDokumenData: ChartData<'line'> = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'],
     datasets: [{
       label: 'Dokumen Diproses',
-      data: [25, 30, 28, 35, 40, 38],
+      data: [35, 40, 38, 45, 50, 48],
       borderColor: 'rgba(139, 92, 246, 1)',
       backgroundColor: 'rgba(139, 92, 246, 0.1)',
       tension: 0.3,
@@ -93,7 +93,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
     }],
   };
 
-  // Chart options
+  // Chart options (remain the same)
   const barOptions: ChartOptions<'bar'> = {
     responsive: true,
     maintainAspectRatio: false,
@@ -184,11 +184,11 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
     },
   };
 
-  // Stats cards data
+  // Stats cards data - adjusted for Desa Cidugaleun
   const stats = [
     {
       title: "KTP Elektronik",
-      value: "920 Orang",
+      value: "5,200 Orang",
       icon: <FiUser className="w-5 h-5" />,
       bgFrom: "from-blue-50",
       bgTo: "to-indigo-50",
@@ -197,7 +197,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
     },
     {
       title: "Kartu Keluarga",
-      value: "520 KK",
+      value: "1,300 KK",
       icon: <FiUsers className="w-5 h-5" />,
       bgFrom: "from-purple-50",
       bgTo: "to-violet-50",
@@ -233,8 +233,8 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
           <div className="p-6 md:p-8">
             <div className="flex justify-between items-start mb-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Administrasi Kependudukan</h2>
-                <p className="text-gray-500 mt-1">Kartu keluarga, KTP, akta kelahiran dan kematian</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Administrasi Kependudukan Desa Cidugaleun</h2>
+                <p className="text-gray-500 mt-1">Tahun 2024 - Total Penduduk: 6,378 Jiwa</p>
               </div>
               <button 
                 onClick={onClose}
@@ -292,7 +292,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
                 <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                   <h3 className="text-lg font-semibold mb-4 text-gray-800 flex items-center">
                     <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
-                    Proses Dokumen Tahun Ini
+                    Proses Dokumen Tahun 2024
                   </h3>
                   <div className="h-64">
                     <Line data={prosesDokumenData} options={lineOptions} />
@@ -305,7 +305,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
             <div className="mt-8 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
               <h3 className="text-lg font-semibold mb-4 text-gray-800 flex items-center">
                 <span className="w-2 h-2 bg-gray-500 rounded-full mr-2"></span>
-                Rekap Administrasi Kependudukan
+                Rekap Administrasi Kependudukan 2024
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200">
@@ -313,15 +313,15 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis Dokumen</th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jumlah</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tahun</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cakupan</th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     <tr>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">KTP Elektronik</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">920</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5,200</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">81.5% Penduduk</td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                           Aktif
@@ -330,8 +330,8 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
                     </tr>
                     <tr>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Kartu Keluarga</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">520</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1,300</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4 Dusun</td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                           Aktif
@@ -341,7 +341,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
                     <tr>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Akta Kelahiran</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">180</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Tahun 2023-2024</td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                           Aktif
@@ -351,7 +351,7 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
                     <tr>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Akta Kematian</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Tahun 2023-2024</td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                           Aktif
@@ -367,24 +367,28 @@ const DataAdministrasiKependudukan: React.FC<DataAdministrasiProps> = ({ onClose
             <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
               <h3 className="text-lg font-semibold mb-3 text-blue-800 flex items-center">
                 <FiBook className="mr-2" />
-                Informasi Layanan Administrasi
+                Layanan Administrasi Desa Cidugaleun
               </h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
-                  <span>Pembuatan KTP Elektronik: Setiap hari kerja jam 08.00-14.00</span>
+                  <span>Pelayanan KTP dan KK: Senin-Kamis jam 08.00-14.00 WIB</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
-                  <span>Pembuatan KK baru: Membawa surat pengantar dari RT/RW</span>
+                  <span>Persyaratan KK baru: Fotokopi KTP, Surat Pengantar RT/RW, dan Surat Nikah</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
-                  <span>Pencatatan kelahiran: Maksimal 60 hari setelah kelahiran</span>
+                  <span>Pencatatan kelahiran: Membawa surat keterangan dari bidan/rumah sakit</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
                   <span>Pelayanan administrasi kependudukan gratis tanpa biaya</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>Lokasi: Kantor Desa Cidugaleun, Jl. Raya Cidugaleun KM 14</span>
                 </li>
               </ul>
             </div>

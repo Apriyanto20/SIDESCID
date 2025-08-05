@@ -19,11 +19,11 @@ interface DataKuantitasProps {
 const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
   // Data configuration
   const ageGroupData = {
-    labels: ['0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60+'],
+    labels: ['0-6', '7-12', '13-15', '16-18', '19-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75+'],
     datasets: [
       {
         label: 'Laki-laki',
-        data: [50, 55, 60, 65, 70, 75, 70, 65, 60, 55, 50, 45, 40],
+        data: [180, 119, 125, 114, 158, 143, 144, 147, 137, 123, 110, 94, 88, 62, 26, 23],
         backgroundColor: 'rgba(99, 102, 241, 0.7)',
         borderColor: 'rgba(99, 102, 241, 1)',
         borderWidth: 1,
@@ -31,7 +31,7 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
       },
       {
         label: 'Perempuan',
-        data: [48, 53, 58, 63, 68, 73, 68, 63, 58, 53, 48, 43, 50],
+        data: [180, 119, 125, 114, 158, 143, 144, 147, 137, 123, 110, 94, 88, 62, 26, 23],
         backgroundColor: 'rgba(236, 72, 153, 0.7)',
         borderColor: 'rgba(236, 72, 153, 1)',
         borderWidth: 1,
@@ -41,10 +41,10 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
   };
 
   const populationTrendData = {
-    labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+    labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
     datasets: [{
       label: 'Total Penduduk',
-      data: [3200, 3250, 3300, 3350, 3400, 3450],
+      data: [6000, 6100, 6200, 6300, 6378, 6378],
       borderColor: 'rgba(16, 185, 129, 1)',
       backgroundColor: 'rgba(16, 185, 129, 0.1)',
       fill: true,
@@ -60,7 +60,7 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
   const genderData = {
     labels: ['Laki-laki', 'Perempuan'],
     datasets: [{
-      data: [1680, 1770],
+      data: [3301, 3077],
       backgroundColor: [
         'rgba(99, 102, 241, 0.7)',
         'rgba(236, 72, 153, 0.7)'
@@ -73,21 +73,25 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
     }],
   };
 
-  const householdData = {
-    labels: ['Kepala Keluarga', 'Istri', 'Anak', 'Lainnya'],
+  const educationData = {
+    labels: ['Tidak Sekolah', 'SD', 'SMP', 'SMA', 'Diploma', 'Sarjana'],
     datasets: [{
-      data: [850, 850, 1200, 550],
+      data: [1356, 3592, 899, 364, 27, 87],
       backgroundColor: [
         'rgba(99, 102, 241, 0.7)',
         'rgba(236, 72, 153, 0.7)',
         'rgba(16, 185, 129, 0.7)',
-        'rgba(245, 158, 11, 0.7)'
+        'rgba(245, 158, 11, 0.7)',
+        'rgba(139, 92, 246, 0.7)',
+        'rgba(20, 184, 166, 0.7)'
       ],
       borderColor: [
         'rgba(99, 102, 241, 1)',
         'rgba(236, 72, 153, 1)',
         'rgba(16, 185, 129, 1)',
-        'rgba(245, 158, 11, 1)'
+        'rgba(245, 158, 11, 1)',
+        'rgba(139, 92, 246, 1)',
+        'rgba(20, 184, 166, 1)'
       ],
       borderWidth: 1,
     }],
@@ -111,8 +115,8 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
           <div className="p-6 md:p-8">
             <div className="flex justify-between items-start mb-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Kuantitas Penduduk</h2>
-                <p className="text-gray-500 mt-1">Analisis demografi dan perkembangan penduduk</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Kuantitas Desa Cidugaleun</h2>
+                <p className="text-gray-500 mt-1">Analisis demografi dan perkembangan penduduk tahun 2024</p>
               </div>
               <button
                 onClick={onClose}
@@ -135,7 +139,7 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Total Penduduk</p>
-                    <p className="text-xl font-bold text-gray-800">3,450 Jiwa</p>
+                    <p className="text-xl font-bold text-gray-800">6,378 Jiwa</p>
                   </div>
                 </div>
               </motion.div>
@@ -150,7 +154,7 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Rasio Gender</p>
-                    <p className="text-xl font-bold text-gray-800">94.9</p>
+                    <p className="text-xl font-bold text-gray-800">107.3</p>
                   </div>
                 </div>
               </motion.div>
@@ -165,7 +169,7 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Pertumbuhan</p>
-                    <p className="text-xl font-bold text-gray-800">1.2%</p>
+                    <p className="text-xl font-bold text-gray-800">1.3%</p>
                   </div>
                 </div>
               </motion.div>
@@ -179,8 +183,8 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
                     <FiHome className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Total KK</p>
-                    <p className="text-xl font-bold text-gray-800">850 KK</p>
+                    <p className="text-sm text-gray-500">Luas Wilayah</p>
+                    <p className="text-xl font-bold text-gray-800">1,179.37 Ha</p>
                   </div>
                 </div>
               </motion.div>
@@ -291,7 +295,7 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
                         scales: {
                           y: {
                             beginAtZero: false,
-                            min: 3000,
+                            min: 5000,
                             grid: { display: false },
                             border: { display: false }
                           },
@@ -305,15 +309,15 @@ const DataKuantitas: React.FC<DataKuantitasProps> = ({ onClose }) => {
                   </div>
                 </div>
 
-                {/* Household Composition */}
+                {/* Education Composition */}
                 <div className="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
                   <h3 className="text-lg font-semibold mb-4 text-gray-800 flex items-center">
-                    <FiHome className="text-amber-500 mr-2" />
-                    Komposisi Keluarga
+                    <FiInfo className="text-amber-500 mr-2" />
+                    Tingkat Pendidikan
                   </h3>
                   <div className="h-72">
                     <Pie
-                      data={householdData}
+                      data={educationData}
                       options={{
                         responsive: true,
                         maintainAspectRatio: false,
