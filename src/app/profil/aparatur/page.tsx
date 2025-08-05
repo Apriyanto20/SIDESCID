@@ -5,25 +5,24 @@ const aparaturData = [
   {
     nama: "Asep Saepudin",
     jabatan: "Kepala Desa",
-    foto: "/images/aparatur/asep.jpg",
+    foto: "/image/logo.png",
   },
   {
     nama: "Ibu Siti Rohmah",
     jabatan: "Sekretaris Desa",
-    foto: "/images/aparatur/siti.jpg",
+    foto: "/image/logo.png",
   },
   {
     nama: "Dedi Rukmana",
     jabatan: "Kaur Pemerintahan",
-    foto: "/images/aparatur/dedi.jpg",
+    foto: "/image/logo.png",
   },
   // Tambahkan data aparatur lainnya di sini
 ];
 
 export default function AparaturDesa() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gray-50 px-4 py-10 md:px-16">
+      <div className="min-h-screen bg-gray-50 px-4 py-10 md:px-16 pt-20">
         <h1 className="text-4xl font-bold text-center text-teal-700 mb-10">
           Struktur Aparatur Desa Cidugaleun
         </h1>
@@ -45,6 +44,5 @@ export default function AparaturDesa() {
           ))}
         </div>
       </div>
-    </Layout>
   );
 }
