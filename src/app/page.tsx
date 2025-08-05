@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Navbar from './components/navbar';
+// import Navbar from './components/navbar';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from 'swiper/modules';
 import { useEffect } from 'react';
@@ -17,7 +17,7 @@ export default function HomePage() {
 
   return (
     <div className="relative min-h-screen bg-gray-50">
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Hero Section */}
       <section
