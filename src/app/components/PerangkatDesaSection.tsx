@@ -23,7 +23,7 @@ export default function PerangkatDesaSection() {
   const radius = 260;
   const centerY = 450;
   const centerXLeft = 90;
-  const centerXRight = 1010;
+  const centerXRight = 1050;
   const angleOffset = Math.PI / 2;
 
   const total = perangkatDesa.length;
