@@ -23,7 +23,7 @@ export default function PerangkatDesaSection() {
   const radius = 260;
   const centerY = 450;
   const centerXLeft = 90;
-  const centerXRight = 1050;
+  const centerXRight = 1150;
   const angleOffset = Math.PI / 2;
 
   const total = perangkatDesa.length;
@@ -35,7 +35,7 @@ export default function PerangkatDesaSection() {
     items: typeof perangkatDesa,
     centerX: number,
     keyPrefix: string,
-    rotateClass: string
+    animationClass: string
   ) => (
     <div
       className="absolute"
@@ -46,7 +46,9 @@ export default function PerangkatDesaSection() {
         top: `${centerY - radius}px`,
       }}
     >
-      <div className={`w-full h-full rounded-full relative ${rotateClass}`}>
+      <div
+        className={`w-full h-full rounded-full relative ${animationClass}`}
+      >
         {items.map((item, i) => {
           const angle = (2 * Math.PI * i) / items.length - angleOffset;
           const x = radius + radius * Math.cos(angle);
@@ -73,11 +75,8 @@ export default function PerangkatDesaSection() {
 
   return (
     <section className="relative min-h-[1000px] bg-gray-50 overflow-hidden py-32">
-      {/* Left Circle */}
-      {renderCircle(leftItems, centerXLeft, "left", "hover:animate-[spinReverse_20s_linear_infinite]")}
-
-      {/* Right Circle */}
-      {renderCircle(rightItems, centerXRight, "right", "hover:animate-spinSlow")}
+      {renderCircle(leftItems, centerXLeft, "left", "animate-spinReverseSlow")}
+      {renderCircle(rightItems, centerXRight, "right", "animate-spinSlow")}
 
       {/* Judul Tengah */}
       <div
