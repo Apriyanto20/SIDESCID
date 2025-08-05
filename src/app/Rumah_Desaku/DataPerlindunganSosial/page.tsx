@@ -20,6 +20,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiShield, FiHome, FiHeart, FiDollarSign, FiUser, FiTrendingUp } from 'react-icons/fi';
 import { TooltipItem } from 'chart.js';
+
 ChartJS.register(
     CategoryScale, LinearScale, BarElement,
     Title, Tooltip, Legend, ArcElement,
@@ -31,11 +32,11 @@ interface DataPerlindunganSosialProps {
 }
 
 const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose }) => {
-    // Data penerima bansos per jenis
+    // Data penerima bansos per jenis - adjusted for Desa Cidugaleun
     const jenisBansosData: ChartData<'pie'> = {
-        labels: ['PKH', 'BPNT', 'BST', 'BLT Desa', 'Bansos Lainnya'],
+        labels: ['PKH', 'BPNT', 'BLT Desa', 'Bansos Covid', 'Bantuan Lansia'],
         datasets: [{
-            data: [120, 85, 65, 45, 30],
+            data: [85, 60, 45, 30, 25],
             backgroundColor: [
                 'rgba(101, 163, 255, 0.7)',
                 'rgba(120, 111, 255, 0.7)',
@@ -54,13 +55,13 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         }],
     };
 
-    // Data penerima per tahun
+    // Data penerima per tahun - adjusted based on village data
     const penerimaTahunanData: ChartData<'bar'> = {
-        labels: ['2019', '2020', '2021', '2022', '2023'],
+        labels: ['2020', '2021', '2022', '2023', '2024'],
         datasets: [
             {
                 label: 'Penerima Bansos',
-                data: [150, 220, 250, 280, 320],
+                data: [120, 150, 180, 200, 220],
                 backgroundColor: 'rgba(74, 222, 128, 0.7)',
                 borderColor: 'rgba(74, 222, 128, 1)',
                 borderWidth: 2,
@@ -69,11 +70,11 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         ],
     };
 
-    // Data penerima berdasarkan kriteria
-    const kriteriaPenerimaData: ChartData<'pie'> = {
+    // Data penerima berdasarkan kriteria - adjusted for Desa Cidugaleun
+    const kriteriaPenerimaData: ChartData<'doughnut'> = {
         labels: ['Keluarga Miskin', 'Lansia', 'Disabilitas', 'Anak Yatim', 'Ibu Hamil'],
         datasets: [{
-            data: [180, 65, 45, 30, 25],
+            data: [150, 45, 30, 20, 15],
             backgroundColor: [
                 'rgba(248, 113, 113, 0.7)',
                 'rgba(250, 176, 5, 0.7)',
@@ -85,13 +86,13 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         }],
     };
 
-    // Data penyaluran per kuartal
+    // Data penyaluran per kuartal - adjusted for Desa Cidugaleun
     const penyaluranData: ChartData<'bar'> = {
         labels: ['Q1', 'Q2', 'Q3', 'Q4'],
         datasets: [
             {
                 label: 'Penyaluran Bansos',
-                data: [75, 82, 80, 88],
+                data: [50, 55, 60, 55],
                 backgroundColor: 'rgba(139, 92, 246, 0.7)',
                 borderColor: 'rgba(139, 92, 246, 1)',
                 borderWidth: 2,
@@ -100,12 +101,12 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         ],
     };
 
-    // Tren pertumbuhan penerima bansos
+    // Tren pertumbuhan penerima bansos - adjusted for Desa Cidugaleun
     const trenPertumbuhanData: ChartData<'line'> = {
-        labels: ['2019', '2020', '2021', '2022', '2023'],
+        labels: ['2020', '2021', '2022', '2023', '2024'],
         datasets: [{
             label: 'Pertumbuhan Penerima',
-            data: [0, 46.7, 13.6, 12, 14.3],
+            data: [0, 25, 20, 11.1, 10],
             borderColor: 'rgba(101, 163, 255, 1)',
             backgroundColor: 'rgba(101, 163, 255, 0.1)',
             fill: true,
@@ -118,7 +119,7 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         }],
     };
 
-    // Chart options
+    // Chart options (same as before)
     const barOptions: ChartOptions<'bar'> = {
         responsive: true,
         maintainAspectRatio: false,
@@ -232,11 +233,11 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         },
     };
 
-    // Stats cards data
+    // Stats cards data - adjusted for Desa Cidugaleun
     const stats = [
         {
-            title: "Total Penerima (2023)",
-            value: "345 Keluarga",
+            title: "Total Penerima (2024)",
+            value: "220 Keluarga",
             icon: <FiUser className="w-5 h-5" />,
             bgFrom: "from-blue-50",
             bgTo: "to-indigo-50",
@@ -245,7 +246,7 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         },
         {
             title: "Total Bantuan",
-            value: "Rp 1,2 M",
+            value: "Rp 850 Jt",
             icon: <FiDollarSign className="w-5 h-5" />,
             bgFrom: "from-purple-50",
             bgTo: "to-violet-50",
@@ -254,7 +255,7 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
         },
         {
             title: "Pertumbuhan Penerima",
-            value: "+14.3%",
+            value: "+10%",
             icon: <FiTrendingUp className="w-5 h-5" />,
             bgFrom: "from-green-50",
             bgTo: "to-emerald-50",
@@ -281,8 +282,8 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                     <div className="p-6 md:p-8">
                         <div className="flex justify-between items-start mb-8">
                             <div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Perlindungan Sosial</h2>
-                                <p className="text-gray-500 mt-1">Penerima bantuan sosial dan program perlindungan lainnya</p>
+                                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Perlindungan Sosial Desa Cidugaleun</h2>
+                                <p className="text-gray-500 mt-1">Penerima bantuan sosial tahun 2024</p>
                             </div>
                             <button
                                 onClick={onClose}
@@ -344,27 +345,7 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                                     </h3>
                                     <div className="h-64">
                                         <Doughnut
-                                            data={{
-                                                labels: ['Keluarga Miskin', 'Lansia', 'Disabilitas', 'Anak Yatim', 'Ibu Hamil'],
-                                                datasets: [{
-                                                    data: [180, 65, 45, 30, 25],
-                                                    backgroundColor: [
-                                                        'rgba(101, 163, 255, 0.7)',  // blue
-                                                        'rgba(120, 111, 255, 0.7)',  // purple
-                                                        'rgba(70, 203, 167, 0.7)',   // teal
-                                                        'rgba(255, 159, 67, 0.7)',   // orange
-                                                        'rgba(235, 73, 152, 0.7)'    // pink
-                                                    ],
-                                                    borderColor: [
-                                                        'rgba(101, 163, 255, 1)',
-                                                        'rgba(120, 111, 255, 1)',
-                                                        'rgba(70, 203, 167, 1)',
-                                                        'rgba(255, 159, 67, 1)',
-                                                        'rgba(235, 73, 152, 1)'
-                                                    ],
-                                                    borderWidth: 1,
-                                                }]
-                                            }}
+                                            data={kriteriaPenerimaData}
                                             options={{
                                                 responsive: true,
                                                 maintainAspectRatio: false,
@@ -375,10 +356,6 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                                                             usePointStyle: true,
                                                             padding: 20,
                                                             color: '#64748b',
-                                                            font: {
-                                                                family: 'Inter, sans-serif',
-                                                                size: 12
-                                                            }
                                                         }
                                                     },
                                                     tooltip: {
@@ -389,10 +366,10 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                                                         cornerRadius: 8,
                                                         displayColors: true,
                                                         callbacks: {
-                                                            label: function (context: TooltipItem<'doughnut'>) {
+                                                            label: function (context) {
                                                                 const label = context.label || '';
-                                                                const value = context.raw as number || 0;
-                                                                const total = (context.dataset?.data as number[]).reduce((a, b) => a + b, 0);
+                                                                const value = context.parsed;
+                                                                const total = context.dataset.data.reduce((a: number, b: number) => a + b, 0);
                                                                 const percentage = Math.round((value / total) * 100);
                                                                 return `${label}: ${value} (${percentage}%)`;
                                                             }
@@ -440,7 +417,7 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                         <div className="mt-8 bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                             <h3 className="text-lg font-semibold mb-4 text-gray-800 flex items-center">
                                 <span className="w-2 h-2 bg-gray-500 rounded-full mr-2"></span>
-                                Daftar Program Perlindungan Sosial
+                                Daftar Program Perlindungan Sosial Desa Cidugaleun
                             </h3>
                             <div className="overflow-x-auto">
                                 <table className="min-w-full divide-y divide-gray-200">
@@ -455,27 +432,27 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                                     <tbody className="bg-white divide-y divide-gray-200">
                                         <tr>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">PKH</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">120 KK</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 600.000/bln</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan-Des 2023</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">85 KK</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 400.000/bln</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan-Des 2024</td>
                                         </tr>
                                         <tr>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">BPNT</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">85 KK</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 200.000/bln</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan-Des 2023</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">BST</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">65 KK</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 300.000/bln</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Apr-Sep 2023</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">60 KK</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 150.000/bln</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan-Des 2024</td>
                                         </tr>
                                         <tr>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">BLT Desa</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45 KK</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 150.000/bln</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jul-Des 2023</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 100.000/bln</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jul-Des 2024</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Bantuan Lansia</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25 Jiwa</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rp 200.000/bln</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jan-Des 2024</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -486,20 +463,24 @@ const DataPerlindunganSosial: React.FC<DataPerlindunganSosialProps> = ({ onClose
                         <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
                             <h3 className="text-lg font-semibold mb-3 text-blue-800 flex items-center">
                                 <FiShield className="mr-2" />
-                                Informasi Tambahan
+                                Catatan Penting
                             </h3>
                             <ul className="space-y-2 text-gray-700">
                                 <li className="flex items-start">
                                     <span className="text-blue-500 mr-2">•</span>
-                                    <span>PKH (Program Keluarga Harapan) adalah program bantuan sosial bersyarat</span>
+                                    <span>PKH (Program Keluarga Harapan) diberikan kepada keluarga sangat miskin dengan anak sekolah</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-blue-500 mr-2">•</span>
-                                    <span>BPNT (Bantuan Pangan Non Tunai) diberikan melalui kartu elektronik</span>
+                                    <span>BPNT (Bantuan Pangan Non Tunai) diberikan melalui kartu elektronik untuk pembelian bahan pokok</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-blue-500 mr-2">•</span>
-                                    <span>Pertumbuhan penerima meningkat signifikan sejak pandemi 2020</span>
+                                    <span>BLT Desa merupakan bantuan langsung tunai dari dana desa untuk keluarga miskin</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="text-blue-500 mr-2">•</span>
+                                    <span>Bantuan Lansia diberikan kepada warga berusia di atas 60 tahun yang tidak memiliki penghasilan tetap</span>
                                 </li>
                             </ul>
                         </div>
