@@ -8,6 +8,7 @@ const beritaDesa = [
     tanggal: "16 November 2024",
     ringkasan:
       "Setelah pembangunan jalan ini selesai, warga sangat terbantu. Transportasi hasil pertanian kini lebih lancar, meningkatkan produktivitas ekonomi lokal.",
+    gambar: "/image/jalan.jpg", // Tambahkan ini
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const beritaDesa = [
     tanggal: "24 Mei 2025",
     ringkasan:
       "Hujan deras menyebabkan longsor yang memutus akses ke desa. Tim BPBD, warga, dan pemdes bekerja sama membuka jalur alternatif.",
+    gambar: "/images/longsor-cidugaleun.jpg", // Tambahkan ini
   },
   {
     id: 3,
@@ -22,13 +24,14 @@ const beritaDesa = [
     tanggal: "28 April 2025",
     ringkasan:
       "Curug yang alami dan belum banyak dikunjungi mulai dikenal publik sebagai destinasi potensial oleh wisatawan lokal.",
+    gambar: "/images/curug-ciparay.jpg", // Tambahkan ini
   },
 ];
 
 export default function BeritaDesa() {
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-50 px-4 py-10 md:px-16">
+      <div className="min-h-screen bg-gray-50 px-4 py-10 md:px-16 pt-35">
         <h1 className="text-4xl font-bold text-center text-teal-700 mb-10">
           Berita Terkini Desa Cidugaleun
         </h1>

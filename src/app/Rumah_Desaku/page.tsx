@@ -94,7 +94,7 @@ export default function RumahDesaku() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-35">
       {/* Navbar */}
       <Navbar />
 

@@ -11,7 +11,7 @@ export default function AgamaPage() {
   const totalPenduduk = agamaData.reduce((sum, item) => sum + item.jumlah, 0);
 
   return (
-    <div className="bg-white min-h-screen px-4 sm:px-6 lg:px-8 py-12">
+    <div className="bg-white min-h-screen px-4 sm:px-6 lg:px-8 py-12 pt-35">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-3">Komposisi Agama Warga</h1>

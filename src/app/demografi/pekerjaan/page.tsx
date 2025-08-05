@@ -4,7 +4,7 @@ import JobTable from '@app/app/components/JobTable';
 
 export default function PekerjaanPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-35">
       {/* Modern Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-500 py-16 text-white">
         <div className="max-w-6xl mx-auto px-6 text-center">

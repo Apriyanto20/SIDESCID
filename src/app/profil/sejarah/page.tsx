@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const SejarahDesa = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden pt-5">
       {/* Background Air Terjun dengan perbaikan */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 animate-waterfall will-change-transform">

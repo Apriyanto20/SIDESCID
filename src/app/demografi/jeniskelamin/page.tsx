@@ -25,7 +25,7 @@ const renderCustomizedLabel = ({ percent, x, y }: PieLabelRenderProps) => (
 
 export default function JenisKelaminPage() {
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="max-w-7xl mx-auto p-6 pt-35">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">Data Jenis Kelamin</h1>
       <p className="text-gray-600 mb-6">
         Halaman ini menampilkan informasi jumlah penduduk berdasarkan jenis kelamin di desa.

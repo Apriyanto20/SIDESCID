@@ -14,7 +14,7 @@ const data = [
 
 export default function UmurPage() {
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="max-w-7xl mx-auto p-6 pt-35">
       <h1 className="text-2xl font-bold mb-4 text-gray-800">Data Penduduk Berdasarkan Umur</h1>
       <p className="text-gray-600 mb-6">
         Halaman ini menampilkan jumlah penduduk desa berdasarkan kelompok umur.
