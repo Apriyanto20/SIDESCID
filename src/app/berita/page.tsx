@@ -1,5 +1,5 @@
 // pages/berita/index.tsx
-import Layout from "../components/Layout";
+import Layout from "@app/app/layout";
 
 const beritaDesa = [
   {
@@ -8,6 +8,7 @@ const beritaDesa = [
     tanggal: "16 November 2024",
     ringkasan:
       "Setelah pembangunan jalan ini selesai, warga sangat terbantu. Transportasi hasil pertanian kini lebih lancar, meningkatkan produktivitas ekonomi lokal.",
+    gambar: "/image/jalan.jpg", // Gambar bisa diunduh dari wartapasundan.com
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const beritaDesa = [
     tanggal: "24 Mei 2025",
     ringkasan:
       "Hujan deras menyebabkan longsor yang memutus akses ke desa. Tim BPBD, warga, dan pemdes bekerja sama membuka jalur alternatif.",
+    gambar: "/images/longsor-cidugaleun.jpg", // Gambar placeholder jika belum tersedia
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const beritaDesa = [
     tanggal: "28 April 2025",
     ringkasan:
       "Curug yang alami dan belum banyak dikunjungi mulai dikenal publik sebagai destinasi potensial oleh wisatawan lokal.",
+    gambar: "/images/curug-ciparay.jpg", // Gambar curug dari sumber atau stok
   },
 ];
 

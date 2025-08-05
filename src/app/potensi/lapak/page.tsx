@@ -1,4 +1,10 @@
 "use client";
+<<<<<<< HEAD
+import { useState, useEffect } from "react";
+import Layout from "@app/app/layout";
+import Link from "next/link";
+=======
+>>>>>>> 36cfcb8fe5f8aa289899143972f96d9ca0f5d6d9
 
 import { useEffect, useState, useMemo } from "react";
 import Layout from "@app/app/components/Layout";

@@ -1,3 +1,4 @@
+"use client"
 const jobData = [
   { job: 'Petani', total: 120 },
   { job: 'Buruh Tani', total: 75 },

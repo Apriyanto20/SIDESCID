@@ -1,3 +1,5 @@
+"use client";
+
 const educationData = [
   { level: 'Akademi/Diploma III/S. Muda', total: 12 },
   { level: 'Diploma I/II', total: 6 },
