@@ -1,8 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Sparkles, Filter, MapPin, Leaf, Palette, Camera } from "lucide-react";
+ge from "next/image";
 
-// Tipe data potensi
+import { useState, useEffect } from "react";
+
+import { Sparkles, Filter, MapPin, Leaf, Palette, Camera } from "lucide-react";
+import Navbar from "@app/app/components/navbar"; // pakai navbar lo yang udah ada
+
+// ---------- Tipe data potensi ----------
 type Potensi = {
   id: number;
   nama: string;
@@ -12,7 +16,7 @@ type Potensi = {
   lokasi?: string;
 };
 
-// Data potensi desa dengan narasi
+// ---------- Data potensi desa ----------
 const dataPotensi: Potensi[] = [
   {
     id: 1,
@@ -43,7 +47,7 @@ const dataPotensi: Potensi[] = [
   },
 ];
 
-// Ikon kategori
+// ---------- Icon helper ----------
 const KategoriIcon = ({ kategori }: { kategori: string }) => {
   switch (kategori) {
     case "Pertanian":
@@ -57,35 +61,44 @@ const KategoriIcon = ({ kategori }: { kategori: string }) => {
   }
 };
 
-export default function PotensiDesa() {
-  const [kategori, setKategori] = useState("Semua");
-  const [mounted, setMounted] = useState(false);
+// ---------- Hook debounce (opsional untuk filter smoothing) ----------
+function useDebounce<T>(value: T, delay = 200): T {
+  const [debounced, setDebounced] = useState(value);
+  useEffect(() => {
+    const id = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(id);
+  }, [value, delay]);
+  return debounced;
+}
 
+export default function PotensiDesa() {
+  const [kategori, setKategori] = useState<string>("Semua");
+  const [mounted, setMounted] = useState(false);
   const kategoriList = ["Semua", "Pertanian", "Kerajinan", "Wisata"];
 
+  const debouncedKategori = useDebounce(kategori, 150);
   const dataFiltered =
-    kategori === "Semua"
+    debouncedKategori === "Semua"
       ? dataPotensi
-      : dataPotensi.filter((item) => item.kategori === kategori);
+      : dataPotensi.filter((item) => item.kategori === debouncedKategori);
 
-  // Trigger animasi setelah mount
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Navbar yang udah ada, diasumsikan dia fixed/sticky di komponennya */}
+      <Navbar />
+
       {/* Hero Banner */}
       <div
-        className={`relative h-[420px] w-full overflow-hidden opacity-0 translate-y-4 transition-all duration-1000 ${
-          mounted ? "opacity-100 translate-y-0" : ""
-        }`}
+        className="relative h-[420px] w-full overflow-hidden pt-16"
+        aria-label="Hero Potensi Desa"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center brightness-75"
-          style={{ backgroundImage: "url('/image/banner.jpg')" }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-center brightness-75" style={{ backgroundImage: "url('/image/banner.jpg')" }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
         <div className="absolute top-0 left-0 w-full z-20">
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-10">
@@ -98,15 +111,17 @@ export default function PotensiDesa() {
         </div>
       </div>
 
-      {/* Filter Kategori - Animasi Fade-In */}
+      {/* Filter Kategori */}
       <section
-        className={`px-5 py-6 bg-white border-b border-gray-200 opacity-0 translate-y-2 transition-all duration-700 delay-300 ${
-          mounted ? "opacity-100 translate-y-0" : ""
+        className={`px-5 py-6 bg-white border-b border-gray-200 transition-all duration-700 ${
+          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
         <div className="flex items-center gap-2 mb-3 justify-center">
           <Filter className="text-gray-600" size={18} />
-          <span className="font-medium text-gray-800">Jelajahi Berdasarkan:</span>
+          <span className="font-medium text-gray-800">
+            Jelajahi Berdasarkan:
+          </span>
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar justify-center">
           {kategoriList.map((kat, index) => (
@@ -118,7 +133,7 @@ export default function PotensiDesa() {
                   ? "bg-teal-500 text-white"
                   : "bg-white text-teal-600 border-teal-300 hover:bg-teal-50"
               }`}
-              style={{ transitionDelay: `${200 + index * 50}ms` }}
+              style={{ transitionDelay: `${100 + index * 60}ms` }}
             >
               {kat}
             </button>
@@ -126,14 +141,15 @@ export default function PotensiDesa() {
         </div>
       </section>
 
-      {/* Daftar Potensi - Naratif & Card */}
+      {/* Daftar Potensi */}
       <section
-        className={`px-5 py-8 max-w-4xl mx-auto opacity-0 translate-y-4 transition-all duration-700 delay-500 ${
-          mounted ? "opacity-100 translate-y-0" : ""
+        className={`px-5 py-8 max-w-4xl mx-auto transition-all duration-700 ${
+          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
         <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-          <Sparkles className="text-yellow-500 animate-pulse" /> Potensi Unggulan
+          <Sparkles className="text-yellow-500 animate-pulse" /> Potensi
+          Unggulan
         </h2>
 
         {dataFiltered.length > 0 ? (
@@ -141,19 +157,24 @@ export default function PotensiDesa() {
             {dataFiltered.map((item, index) => (
               <article
                 key={item.id}
-                className={`bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-500 transform opacity-0 translate-y-6 ${
-                  mounted ? "opacity-100 translate-y-0" : ""
+                className={`bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-500 transform ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
-                style={{ transitionDelay: `${600 + index * 100}ms` }}
+                style={{ transitionDelay: `${200 + index * 120}ms` }}
               >
                 <div className="md:flex">
                   {/* Gambar */}
                   <div className="md:w-1/3 relative h-48 md:h-auto">
-                    <img
-                      src={item.gambar}
-                      alt={item.nama}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <div className="w-full h-full overflow-hidden rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none">
+                      <Image
+                        src={item.gambar}
+                        alt={item.nama}
+                        width={400}
+                        height={300}
+                        className="object-cover w-full h-full transition-transform duration-500"
+                        priority={false}
+                      />
+                    </div>
                   </div>
 
                   {/* Konten */}
@@ -165,11 +186,14 @@ export default function PotensiDesa() {
                           {item.kategori}
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-800">{item.nama}</h3>
-                      <p className="text-gray-600 mt-3 leading-relaxed">{item.deskripsi}</p>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {item.nama}
+                      </h3>
+                      <p className="text-gray-600 mt-3 leading-relaxed">
+                        {item.deskripsi}
+                      </p>
                     </div>
 
-                    {/* Lokasi */}
                     {item.lokasi && (
                       <div className="flex items-center gap-1.5 mt-4 text-sm text-gray-500">
                         <MapPin size={16} />
@@ -182,12 +206,10 @@ export default function PotensiDesa() {
             ))}
           </div>
         ) : (
-          <div
-            className={`text-center py-10 opacity-0 translate-y-4 transition-all duration-500 delay-500 ${
-              mounted ? "opacity-100 translate-y-0" : ""
-            }`}
-          >
-            <p className="text-gray-500 text-lg">Tidak ada potensi dalam kategori ini.</p>
+          <div className="text-center py-10">
+            <p className="text-gray-500 text-lg">
+              Tidak ada potensi dalam kategori ini.
+            </p>
             <button
               onClick={() => setKategori("Semua")}
               className="text-teal-600 hover:underline text-sm mt-2"
@@ -198,24 +220,25 @@ export default function PotensiDesa() {
         )}
       </section>
 
-      {/* Footer Spacer */}
+      {/* Spacer + WA Button */}
       <div className="h-16" />
-      {/* Floating WA Button */}
-        <a
-          href="https://wa.me/6281234567890" // ✅ Fixed: no extra spaces
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 bg-white text-gray-800 px-5 py-3 rounded-full flex items-center gap-3 shadow-xl font-medium z-50 hover:scale-105 transition-all duration-300 animate-bounce-slow hover:shadow-2xl"
-        >
-          {/* Ikon WA - Gunakan gambar PNG */}
-          <img src="/image/wa.png" alt="WA" className="w-6 h-6" />
-          <span className="text-sm font-semibold whitespace-nowrap">Butuh Bantuan?</span>
-        </a>
+      <a
+        href="https://wa.me/6281234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-white text-gray-800 px-5 py-3 rounded-full flex items-center gap-3 shadow-xl font-medium z-50 hover:scale-105 transition-all duration-300 animate-bounce-slow hover:shadow-2xl"
+      >
+        <img src="/image/wa.png" alt="WA" className="w-6 h-6" />
+        <span className="text-sm font-semibold whitespace-nowrap">
+          Butuh Bantuan?
+        </span>
+      </a>
 
-        {/* Custom CSS Animasi */}
+      {/* Animasi dan helper CSS */}
       <style jsx>{`
         @keyframes bounce-slow {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0);
           }
           50% {
@@ -224,6 +247,13 @@ export default function PotensiDesa() {
         }
         .animate-bounce-slow {
           animation: bounce-slow 2s infinite;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>

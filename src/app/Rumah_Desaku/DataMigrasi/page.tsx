@@ -31,13 +31,13 @@ interface DataMigrasiProps {
 }
 
 const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
-  // Data migrasi masuk/keluar per tahun
+  // Data migrasi masuk/keluar per tahun - adjusted for Desa Cidugaleun
   const migrasiTahunanData: ChartData<'bar'> = {
-    labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+    labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
     datasets: [
       {
         label: 'Migrasi Masuk',
-        data: [45, 52, 48, 60, 65, 72],
+        data: [32, 28, 35, 40, 45, 38],
         backgroundColor: 'rgba(74, 222, 128, 0.7)',
         borderColor: 'rgba(74, 222, 128, 1)',
         borderWidth: 2,
@@ -45,7 +45,7 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
       },
       {
         label: 'Migrasi Keluar',
-        data: [38, 42, 50, 55, 58, 62],
+        data: [45, 50, 48, 42, 40, 35],
         backgroundColor: 'rgba(248, 113, 113, 0.7)',
         borderColor: 'rgba(248, 113, 113, 1)',
         borderWidth: 2,
@@ -54,11 +54,11 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
     ],
   };
 
-  // Data asal migrasi masuk
+  // Data asal migrasi masuk - adjusted based on nearby areas
   const asalMigrasiData: ChartData<'pie'> = {
-    labels: ['Kota Lain', 'Desa Tetangga', 'Luar Kabupaten', 'Luar Provinsi'],
+    labels: ['Desa Tetangga', 'Kota Tasikmalaya', 'Kabupaten Lain', 'Luar Provinsi'],
     datasets: [{
-      data: [120, 85, 45, 30],
+      data: [65, 45, 20, 10],
       backgroundColor: [
         'rgba(101, 163, 255, 0.7)',
         'rgba(120, 111, 255, 0.7)',
@@ -75,11 +75,11 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
     }],
   };
 
-  // Data tujuan migrasi keluar
+  // Data tujuan migrasi keluar - adjusted based on common destinations
   const tujuanMigrasiData: ChartData<'bar'> = {
-    labels: ['Jakarta', 'Bandung', 'Bogor', 'Lainnya'],
+    labels: ['Tasikmalaya Kota', 'Bandung', 'Jakarta', 'Lainnya'],
     datasets: [{
-      data: [85, 65, 45, 25],
+      data: [55, 30, 10, 5],
       backgroundColor: 'rgba(248, 113, 113, 0.7)',
       borderColor: 'rgba(248, 113, 113, 1)',
       borderWidth: 1,
@@ -87,12 +87,12 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
     }],
   };
 
-  // Tren migrasi netto
+  // Tren migrasi netto - adjusted based on new data
   const nettoMigrasiData: ChartData<'line'> = {
-    labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+    labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
     datasets: [{
       label: 'Migrasi Netto',
-      data: [7, 10, -2, 5, 7, 10],
+      data: [-13, -22, -13, -2, 5, 3],
       borderColor: 'rgba(101, 163, 255, 1)',
       backgroundColor: 'rgba(101, 163, 255, 0.1)',
       fill: true,
@@ -105,7 +105,7 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
     }],
   };
 
-  // Chart options
+  // Chart options (remain the same as original)
   const barOptions: ChartOptions<'bar'> = {
     responsive: true,
     maintainAspectRatio: false,
@@ -220,11 +220,11 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
     },
   };
 
-  // Stats cards data
+  // Stats cards data - updated for 2024
   const stats = [
     {
-      title: "Migrasi Masuk (2023)",
-      value: "72 Jiwa",
+      title: "Migrasi Masuk (2024)",
+      value: "38 Jiwa",
       icon: <FiArrowDown className="w-5 h-5" />,
       bgFrom: "from-green-50",
       bgTo: "to-emerald-50",
@@ -232,8 +232,8 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
       iconColor: "text-green-600"
     },
     {
-      title: "Migrasi Keluar (2023)",
-      value: "62 Jiwa",
+      title: "Migrasi Keluar (2024)",
+      value: "35 Jiwa",
       icon: <FiArrowUp className="w-5 h-5" />,
       bgFrom: "from-red-50",
       bgTo: "to-rose-50",
@@ -241,8 +241,8 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
       iconColor: "text-red-600"
     },
     {
-      title: "Migrasi Netto (2023)",
-      value: "+10 Jiwa",
+      title: "Migrasi Netto (2024)",
+      value: "+3 Jiwa",
       icon: <FiUsers className="w-5 h-5" />,
       bgFrom: "from-blue-50",
       bgTo: "to-cyan-50",
@@ -270,7 +270,7 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
             <div className="flex justify-between items-start mb-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Data Migrasi Penduduk</h2>
-                <p className="text-gray-500 mt-1">Data perpindahan penduduk masuk dan keluar desa</p>
+                <p className="text-gray-500 mt-1">Data perpindahan penduduk masuk dan keluar Desa Cidugaleun</p>
               </div>
               <button 
                 onClick={onClose}
@@ -363,15 +363,19 @@ const DataMigrasi: React.FC<DataMigrasiProps> = ({ onClose }) => {
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
-                  <span>Migrasi netto positif menunjukkan lebih banyak penduduk yang masuk ke desa</span>
+                  <span>Migrasi netto mulai positif sejak 2023 menunjukkan peningkatan daya tarik desa</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
-                  <span>Puncak migrasi keluar terjadi pada tahun 2020 karena pandemi</span>
+                  <span>Puncak migrasi keluar terjadi pada tahun 2020 karena dampak pandemi</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-500 mr-2">•</span>
-                  <span>Mayoritas migran masuk berasal dari desa tetangga (45%)</span>
+                  <span>Mayoritas migran masuk berasal dari desa tetangga (65%) dan Kota Tasikmalaya (45%)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>55% migran keluar menuju Tasikmalaya Kota untuk bekerja dan pendidikan</span>
                 </li>
               </ul>
             </div>

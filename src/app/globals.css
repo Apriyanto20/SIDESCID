@@ -46,5 +46,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================== */
+/* 🌊 Animasi Background Air Terjun */
+/* =========================== */
+@keyframes waterfallFlow {
+  0% {
+    background-position: center 0%;
+  }
+  100% {
+    background-position: center 100%;
+  }
+}
 
 
