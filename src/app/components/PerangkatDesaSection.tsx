@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import FloatingProfileCard from "./FloatingProfileCard";
 
 const perangkatDesa = [
@@ -20,8 +21,20 @@ const perangkatDesa = [
 ];
 
 export default function PerangkatDesaSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   const radius = 260;
-  const centerY = 450;
+  const centerYDesktop = 450;
   const centerXLeft = 90;
   const centerXRight = 1150;
   const angleOffset = Math.PI / 2;
@@ -34,6 +47,7 @@ export default function PerangkatDesaSection() {
   const renderCircle = (
     items: typeof perangkatDesa,
     centerX: number,
+    centerY: number,
     keyPrefix: string,
     animationClass: string
   ) => (
@@ -74,19 +88,16 @@ export default function PerangkatDesaSection() {
   );
 
   return (
-    <section className="relative min-h-[1000px] bg-gray-50 overflow-hidden py-32">
-      {renderCircle(leftItems, centerXLeft, "left", "animate-spinReverseSlow")}
-      {renderCircle(rightItems, centerXRight, "right", "animate-spinSlow")}
-
+    <section className="relative bg-gray-50 overflow-hidden py-20 min-h-[1000px]">
       {/* Judul Tengah */}
       <div
         className="relative z-20 text-center max-w-2xl mx-auto"
         data-aos="fade-up"
         style={{
-          position: "absolute",
-          top: `${centerY - 220}px`,
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          position: !isMobile ? "absolute" : "relative",
+          top: !isMobile ? `${centerYDesktop - 220}px` : undefined,
+          left: !isMobile ? "50%" : undefined,
+          transform: !isMobile ? "translate(-50%, -50%)" : undefined,
         }}
       >
         <div className="inline-flex items-center justify-center w-12 h-10 bg-purple-100 rounded-full mb-4">
@@ -97,6 +108,22 @@ export default function PerangkatDesaSection() {
           Kami hadir untuk melayani masyarakat desa Cidugaleun.
         </p>
       </div>
+      {/* Tampilan Desktop: Dua lingkaran kiri & kanan */}
+      {!isMobile && (
+        <>
+          {renderCircle(leftItems, centerXLeft, centerYDesktop, "left", "animate-spinReverseSlow")}
+          {renderCircle(rightItems, centerXRight, centerYDesktop, "right", "animate-spinSlow")}
+        </>
+      )}
+
+      {/* Tampilan Mobile: Satu lingkaran di tengah */}
+      {isMobile && (
+        <div className="relative flex justify-center items-center h-[700px]">
+          {renderCircle(perangkatDesa, window.innerWidth / 2, 350, "mobile", "animate-spinSlow")}
+        </div>
+      )}
+
+
     </section>
   );
 }

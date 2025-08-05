@@ -1,5 +1,5 @@
 "use client";
-ge from "next/image";
+import Image from "next/image";
 
 import { useState, useEffect } from "react";
 

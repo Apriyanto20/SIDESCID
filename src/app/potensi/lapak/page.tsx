@@ -1,14 +1,7 @@
 "use client";
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import Layout from "@app/app/layout";
-import Link from "next/link";
-=======
->>>>>>> 36cfcb8fe5f8aa289899143972f96d9ca0f5d6d9
 
 import { useEffect, useState, useMemo } from "react";
-import Layout from "@app/app/components/Layout";
-import Navbar from "@app/app/components/navbar"; // pastikan nama file/case sesuai
+import Navbar from "@app/app/components/navbar";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -35,7 +28,7 @@ function useDebounce<T>(value: T, delay = 300): T {
   return debounced;
 }
 
-// ---------- Data (bisa dipindah ke file / fetch API) ----------
+// ---------- Data ----------
 const produkDesa: Produk[] = [
   {
     id: 1,
@@ -189,7 +182,6 @@ export default function LapakDesa() {
 
   const debouncedQuery = useDebounce(query, 250);
 
-  // Matching (case-insensitive)
   const hasil = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase();
     if (!q) return produkDesa;
@@ -211,94 +203,89 @@ export default function LapakDesa() {
   return (
     <>
       <Navbar />
-      <Layout>
-        <div className="pt-20"> {/* supaya tidak ketutup navbar */}
-          <div className="min-h-screen w-full bg-white px-5 py-8">
-            <div className="max-w-3xl mx-auto px-5 py-8 space-y-12 pb-28 bg-sky-100 rounded-2xl">
-              {/* Header */}
-              <div
-                className={`text-center transition-all duration-700 ease-out ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      <div className="pt-20">
+        <div className="min-h-screen w-full bg-white px-5 py-8">
+          <div className="max-w-3xl mx-auto px-5 py-8 space-y-12 pb-28 bg-sky-100 rounded-2xl">
+            {/* Header */}
+            <div
+              className={`text-center transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
-              >
-                <h1 className="text-3xl font-black text-slate-800">
-                  🌾 <span className="text-emerald-600">UMKM</span> Desa Cidugaleun
-                </h1>
-                <p className="text-gray-600 mt-2">
-                  Produk lokal dengan jiwa dan kisah di baliknya.
-                </p>
-                <nav className="text-sm text-gray-500 mt-3 flex justify-center gap-1">
-                  <Link href="/" className="hover:text-blue-500">
-                    Beranda
-                  </Link>
-                  <span>/</span>
-                  <span className="text-gray-700 font-medium">Cerita UMKM</span>
-                </nav>
-              </div>
-
-              {/* Search */}
-              <div
-                className={`flex justify-center transition-all duration-700 delay-150 ease-out ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-              >
-                <SearchBar value={query} onChange={setQuery} />
-              </div>
-
-              {/* Hasil */}
-              {hasil.length > 0 ? (
-                <div className="grid gap-6">
-                  {hasil.map((produk, idx) => (
-                    <ProductCard
-                      key={produk.id}
-                      produk={produk}
-                      delayMs={300 + idx * 100}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div
-                  className={`text-center py-10 transition-all duration-500 ${
-                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                >
-                  <p className="text-gray-500 text-lg">
-                    Tidak ada produk yang cocok.
-                  </p>
-                  <button
-                    onClick={() => setQuery("")}
-                    className="text-emerald-600 hover:underline text-sm mt-2"
-                  >
-                    Hapus pencarian
-                  </button>
-                </div>
-              )}
-
-              {/* Bantuan WA floating */}
-              <a
-                href="https://wa.me/6281234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Butuh bantuan via WhatsApp"
-                className="fixed bottom-6 right-6 bg-white text-gray-800 px-4 py-3 rounded-full flex items-center gap-2 shadow-xl font-medium z-50 hover:shadow-2xl transition-transform duration-200 hover:scale-105"
-              >
-                <div className="w-6 h-6 relative">
-                  <Image
-                    src="/image/wa.png"
-                    alt="WA"
-                    fill
-                    sizes="24px"
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-sm font-semibold whitespace-nowrap">
-                  Butuh Bantuan?
-                </span>
-              </a>
+            >
+              <h1 className="text-3xl font-black text-slate-800">
+                🌾 <span className="text-emerald-600">UMKM</span> Desa Cidugaleun
+              </h1>
+              <p className="text-gray-600 mt-2">
+                Produk lokal dengan jiwa dan kisah di baliknya.
+              </p>
+              <nav className="text-sm text-gray-500 mt-3 flex justify-center gap-1">
+                <Link href="/" className="hover:text-blue-500">
+                  Beranda
+                </Link>
+                <span>/</span>
+                <span className="text-gray-700 font-medium">Cerita UMKM</span>
+              </nav>
             </div>
+
+            {/* Search */}
+            <div
+              className={`flex justify-center transition-all duration-700 delay-150 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+            >
+              <SearchBar value={query} onChange={setQuery} />
+            </div>
+
+            {/* Hasil */}
+            {hasil.length > 0 ? (
+              <div className="grid gap-6">
+                {hasil.map((produk, idx) => (
+                  <ProductCard
+                    key={produk.id}
+                    produk={produk}
+                    delayMs={300 + idx * 100}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div
+                className={`text-center py-10 transition-all duration-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+              >
+                <p className="text-gray-500 text-lg">
+                  Tidak ada produk yang cocok.
+                </p>
+                <button
+                  onClick={() => setQuery("")}
+                  className="text-emerald-600 hover:underline text-sm mt-2"
+                >
+                  Hapus pencarian
+                </button>
+              </div>
+            )}
+
+            {/* Bantuan WA */}
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Butuh bantuan via WhatsApp"
+              className="fixed bottom-6 right-6 bg-white text-gray-800 px-4 py-3 rounded-full flex items-center gap-2 shadow-xl font-medium z-50 hover:shadow-2xl transition-transform duration-200 hover:scale-105"
+            >
+              <div className="w-6 h-6 relative">
+                <Image
+                  src="/image/wa.png"
+                  alt="WA"
+                  fill
+                  sizes="24px"
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-sm font-semibold whitespace-nowrap">
+                Butuh Bantuan?
+              </span>
+            </a>
           </div>
         </div>
-      </Layout>
+      </div>
     </>
   );
 }

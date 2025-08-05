@@ -1,5 +1,5 @@
 // pages/berita/index.tsx
-import Layout from "@app/app/layout";
+import Layout from "../layout";
 
 const beritaDesa = [
   {
@@ -30,8 +30,7 @@ const beritaDesa = [
 
 export default function BeritaDesa() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gray-50 px-4 py-10 md:px-16">
+      <div className="min-h-screen bg-gray-50 px-4 py-10 md:px-16 mt-20">
         <h1 className="text-4xl font-bold text-center text-teal-700 mb-10">
           Berita Terkini Desa Cidugaleun
         </h1>
@@ -61,6 +60,5 @@ export default function BeritaDesa() {
           ))}
         </div>
       </div>
-    </Layout>
   );
 }
