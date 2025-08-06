@@ -9,10 +9,10 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-export const metadata = {
-  title: 'Sistem Informasi Desa Cidugaleun Digital',
-  description: 'Desa Cidugaleun Digital - Sistem Informasi Desa',
-};
+// export const metadata = {
+//   title: 'Sistem Informasi Desa Cidugaleun Digital',
+//   description: 'Desa Cidugaleun Digital - Sistem Informasi Desa',
+// };
 
 export default function RootLayout({
   children,
