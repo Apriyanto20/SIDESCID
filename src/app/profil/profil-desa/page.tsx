@@ -35,20 +35,20 @@ export default function ProfilDesaCidugaleun() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-blue-900 to-indigo-700 text-transparent bg-clip-text mb-4">
+           <h2 className="text-3xl font-extrabold bg-gradient-to-r from-blue-900 to-indigo-700 text-transparent bg-clip-text mb-4">
             Tentang Desa Cidugaleun
           </h2>
           <p className="text-justify leading-relaxed text-lg text-gray-700 font-serif mb-4">
-            Desa Cidugaleun merupakan salah satu desa di Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat. 
-            Desa ini memiliki potensi alam pegunungan dan curug seperti Curug Ciparay yang masih jarang dikenal wisatawan.
+            Desa Cidugaleun merupakan salah satu desa di Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat. Desa ini dianugerahi keindahan alam pegunungan yang asri serta keberadaan air terjun alami seperti Curug Ciparay dan Curug Cipayung, yang masih jarang dikenal luas oleh wisatawan. Pesona alamnya yang masih alami memberikan daya tarik tersendiri bagi siapa saja yang ingin menikmati suasana pedesaan yang sejuk dan tenang.
           </p>
           <p className="text-justify leading-relaxed text-lg text-gray-700 font-serif mb-4">
-            Selain keindahan alamnya, Desa Cidugaleun juga dikenal dengan lahan pertanian yang subur. Mayoritas masyarakatnya 
-            bermata pencaharian sebagai petani, sehingga suasana pedesaan di sini terasa sangat asri dan alami.
+            Selain keindahan alam, Desa Cidugaleun juga dikenal dengan lahan pertanian yang subur. Mayoritas masyarakat bermata pencaharian sebagai petani, terutama di sektor pertanian padi, palawija, dan perkebunan kopi. Suasana desa yang masih alami, dengan hamparan sawah terasering dan perbukitan hijau, menambah kesan asri dan menenangkan bagi para pengunjung.
+          </p>
+          <p className="text-justify leading-relaxed text-lg text-gray-700 font-serif mb-4">
+            Potensi wisata budaya dan alam di desa ini juga sangat besar untuk dikembangkan, di antaranya aktivitas trekking di area perbukitan, menikmati panorama persawahan terasering, hingga menjelajahi air terjun tersembunyi yang berada di sekitar wilayah desa.
           </p>
           <p className="text-justify leading-relaxed text-lg text-gray-700 font-serif">
-            Desa ini juga memiliki potensi wisata budaya dan alam yang bisa dikembangkan, seperti trekking di area perbukitan, 
-            menikmati panorama persawahan terasering, dan mengunjungi air terjun yang tersembunyi di sekitar desa.
+            Selain sebagai kawasan pertanian dan wisata, Desa Cidugaleun juga memiliki potensi sumber daya air bersih yang melimpah. Beberapa sumber mata air alami di desa ini telah dimanfaatkan oleh masyarakat setempat untuk memenuhi kebutuhan air bersih sehari-hari. Keberadaan mata air ini juga menjadi bagian penting dalam mencukupi kebutuhan air bagi desa-desa di sekitarnya. Meskipun secara administratif Desa Cidugaleun belum tercatat sebagai pusat utama suplai air bersih untuk Kota Tasikmalaya, namun masyarakat sekitar meyakini bahwa sumber mata air dari wilayah ini berperan strategis dalam menjaga ketersediaan air bersih, terutama di saat musim kemarau panjang. Potensi air bersih dari Desa Cidugaleun sering dijadikan sumber alternatif dalam mendukung program bantuan air bersih ketika terjadi krisis di beberapa wilayah Tasikmalaya.
           </p>
         </motion.div>
 
@@ -67,8 +67,15 @@ export default function ProfilDesaCidugaleun() {
             className="rounded-3xl shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500"
           />
           <Image
+            src="/images/curug-payung.png"
+            alt="Curug Payung View 2"
+            width={500}
+            height={280}
+            className="rounded-3xl shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500"
+          />
+           <Image
             src="/images/crp1.jpg"
-            alt="Curug Ciparay View 2"
+            alt="View 3"
             width={500}
             height={280}
             className="rounded-3xl shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500"
