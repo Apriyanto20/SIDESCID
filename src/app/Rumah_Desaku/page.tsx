@@ -59,7 +59,7 @@ export default function RumahDesaku() {
 
   const carouselImages = [
     {
-      src: "/images/desaku1.JPG",
+      src: "/images/curug-ciparay.JPG",
       alt: "Pemandangan Desa Cidugaleun",
       caption: "Keindahan Alam Desa Cidugaleun"
     },

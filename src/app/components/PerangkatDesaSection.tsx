@@ -35,7 +35,7 @@ export default function PerangkatDesaSection() {
 
   const radius = 260;
   const centerYDesktop = 450;
-  const centerXLeft = 90;
+  const centerXLeft = 100;
   const centerXRight = 1150;
   const angleOffset = Math.PI / 2;
 
