@@ -202,7 +202,6 @@ export default function LapakDesa() {
 
   return (
     <>
-      <Navbar />
       <div className="pt-20">
         <div className="min-h-screen w-full bg-white px-5 py-8">
           <div className="max-w-3xl mx-auto px-5 py-8 space-y-12 pb-28 bg-sky-100 rounded-2xl">
