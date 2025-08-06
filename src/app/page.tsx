@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from 'next/image';
 // import Navbar from './components/navbar';
@@ -9,6 +9,11 @@ import 'swiper/css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PerangkatDesaSection from "./components/PerangkatDesaSection";
+
+export const metadata = {
+  title: 'Sistem Informasi Desa Cidugaleun Digital',
+  description: 'Desa Cidugaleun Digital - Sistem Informasi Desa',
+};
 
 export default function HomePage() {
   useEffect(() => {
