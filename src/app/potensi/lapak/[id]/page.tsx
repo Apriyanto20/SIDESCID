@@ -134,8 +134,6 @@ export default function DetailProduk() {
   if (!produk) {
     return (
       <>
-        <Navbar />
-        <Layout>
           <div className="flex flex-col items-center justify-center min-h-[60vh] px-5 text-center pt-24">
             <h2 className="text-2xl font-bold text-gray-800">Produk Tidak Ditemukan</h2>
             <p className="text-gray-600 mt-2">
@@ -148,15 +146,13 @@ export default function DetailProduk() {
               ← Kembali ke Cerita UMKM
             </Link>
           </div>
-        </Layout>
       </>
     );
   }
 
   return (
     <>
-      <Navbar />
-      <Layout>
+ 
         <div className="pt-20">
           <div className="min-h-screen w-full bg-white px-5 py-8">
             <div className="max-w-3xl mx-auto px-5 py-8 space-y-12 pb-28 bg-sky-100 rounded-2xl">
@@ -296,7 +292,6 @@ export default function DetailProduk() {
             </div>
           </div>
         </div>
-      </Layout>
     </>
   );
 }
