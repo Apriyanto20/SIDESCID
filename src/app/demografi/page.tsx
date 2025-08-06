@@ -298,7 +298,7 @@ const VisionMissionSection = () => (
           <h3 className="text-xl font-semibold text-blue-800">Visi Desa</h3>
         </div>
         <blockquote className="text-gray-700 italic pl-4 border-l-2 border-blue-300">
-          "Berlandaskan Iman dan Taqwa Mewujudkan Masyarakat Cidugaleun yang Maju dan Berkualitas"
+          Berlandaskan Iman dan Taqwa Mewujudkan Masyarakat Cidugaleun yang Maju dan Berkualitas
         </blockquote>
       </motion.div>
 

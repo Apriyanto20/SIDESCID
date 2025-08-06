@@ -10,10 +10,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PerangkatDesaSection from "./PerangkatDesaSection";
 
-// export const metadata = {
-//     title: 'Sistem Informasi Desa Cidugaleun Digital',
-//     description: 'Desa Cidugaleun Digital - Sistem Informasi Desa',
-// };
 
 export default function HomePage() {
     useEffect(() => {
