@@ -1,8 +1,8 @@
 module.exports = {
     eslint: {
-        ignoreDuringBuilds: true
+        ignoreDuringBuilds: true,
     },
     typescript: {
-        ignoreBuildErrors: true  // Optional: nonaktifkan juga error TypeScript
-    }
+        ignoreBuildErrors: true, // Nonaktifkan juga error TypeScript
+    },
 }
