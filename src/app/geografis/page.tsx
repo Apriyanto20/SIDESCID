@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React, { useState } from "react";
 import { PawPrint } from "lucide-react";
 import {
@@ -23,7 +24,6 @@ import {
     Cell,
 } from "recharts";
 
-// Consistent number formatter for both server and client
 const formatNumber = (num: number) => {
     return new Intl.NumberFormat('en-US', {
         minimumFractionDigits: 2,
@@ -530,6 +530,38 @@ export default function GeografisPage() {
                             </div>
                         </div>
 
+                        {/* Gallery Section */}
+                        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">Galeri Sumber Daya Alam</h3>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                {[
+                                    { src: '/image/sawah.png', alt: 'Pemandangan alam Desa Cidugaleun' },
+                                    { src: '/image/madu.png', alt: 'Pertanian di Desa Cidugaleun' },
+                                    { src: '/image/pemandangan.jpg', alt: 'Sumber air alami' },
+                                    { src: '/image/cidugaleun.jpg', alt: 'Hasil bumi lokal' },
+                                ].map((image, index) => (
+                                    <div
+                                        key={index}
+                                        className="relative aspect-square rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group"
+                                    >
+                                        <Image
+                                            src={image.src}
+                                            alt={image.alt}
+                                            fill
+                                            sizes="(max-width: 768px) 50vw, 25vw"
+                                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.onerror = null;
+                                                target.src = '/image/kegiatan.jpg';
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                                 <div className="p-3 bg-green-100 text-green-700 rounded-lg w-fit mb-3">
@@ -623,7 +655,7 @@ export default function GeografisPage() {
             <div className="text-center mb-12 pt-20">
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                     <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                    Profil Geografis
+                        Profil Geografis
                     </span>
                     <br />
                     Desa Cidugaleun
