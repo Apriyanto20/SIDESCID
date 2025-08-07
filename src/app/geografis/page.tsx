@@ -390,7 +390,7 @@ export default function GeografisPage() {
                             <h3 className="text-lg font-semibold text-gray-800 mb-3">Analisis</h3>
                             <div className="prose prose-sm text-gray-600">
                                 <p>
-                                    Mayoritas penduduk Desa Cidugaleun bekerja sebagai <strong>buruh harian/tani</strong> dan <strong>wiraswasta</strong>.
+                                    Mayoritas penduduk Desa Cidugaleun bekerja sebagai buruh harian/tani dan wiraswasta.
                                     Sektor pertanian masih menjadi tulang punggung perekonomian desa, diikuti oleh sektor informal lainnya.
                                 </p>
                                 <p className="mt-2">
@@ -623,7 +623,7 @@ export default function GeografisPage() {
             <div className="text-center mb-12 pt-20">
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                     <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                        Profil Geografis
+                    Profil Geografis
                     </span>
                     <br />
                     Desa Cidugaleun
