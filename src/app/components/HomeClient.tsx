@@ -91,7 +91,7 @@ export default function HomePage() {
                             Galeri Desa Cidugaleun
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Dokumentasi landscape dan kegiatan warga
+                            Kekayaan Alam dan Inovasi Ekonomi Masyarakat Desa Cidugaleun
                         </p>
                     </div>
 
