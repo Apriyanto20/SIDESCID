@@ -2,10 +2,13 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Legend } from "recharts";
-import { 
-  FiUsers, FiShield, FiAward, FiFileText, FiHome, FiBook, 
-  FiBriefcase, FiBarChart2, FiGrid, FiTrendingUp 
+import {
+  PieChart, Pie, Cell, Tooltip, ResponsiveContainer,
+  BarChart, Bar, XAxis, YAxis, Legend, PieLabelRenderProps
+} from "recharts";
+import {
+  FiUsers, FiShield, FiAward, FiFileText, FiHome, FiBook,
+  FiBriefcase, FiBarChart2, FiGrid, FiTrendingUp
 } from 'react-icons/fi';
 
 // Blue color palette
@@ -14,7 +17,7 @@ const BLUE_SECONDARY = '#3B82F6'; // Medium blue
 const BLUE_LIGHT = '#93C5FD';     // Light blue
 const BLUE_BG = '#EFF6FF';        // Very light blue background
 
-// Custom Pie Chart Label Component
+// ✅ Perbaikan typing di sini
 const CustomPieLabel = ({
   cx,
   cy,
@@ -22,10 +25,7 @@ const CustomPieLabel = ({
   innerRadius,
   outerRadius,
   percent,
-  index,
-  name,
-  value
-}) => {
+}: PieLabelRenderProps) => {
   const RADIAN = Math.PI / 180;
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -77,11 +77,11 @@ const demographicData = {
     { name: "75+", value: 86, color: BLUE_PRIMARY },
   ],
   religions: [
-    { name: "Islam", value: 6000, color: BLUE_PRIMARY, icon: "🕌" },
-    { name: "Kristen", value: 200, color: BLUE_SECONDARY, icon: "⛪" },
-    { name: "Katolik", value: 100, color: '#BFDBFE', icon: "✝️" },
-    { name: "Hindu", value: 50, color: BLUE_LIGHT, icon: "🕉️" },
-    { name: "Budha", value: 28, color: '#DBEAFE', icon: "☸️" },
+    { name: "Islam", value: 6.378, color: BLUE_PRIMARY, icon: "🕌" },
+    { name: "Kristen", value: 0, color: BLUE_SECONDARY, icon: "⛪" },
+    { name: "Katolik", value: 0, color: '#BFDBFE', icon: "✝️" },
+    { name: "Hindu", value: 0, color: BLUE_LIGHT, icon: "🕉️" },
+    { name: "Budha", value: 0, color: '#DBEAFE', icon: "☸️" },
   ],
   occupations: [
     { name: "PNS/POLRI/TNI", value: 43, color: BLUE_PRIMARY, icon: "🏛️" },
@@ -123,17 +123,17 @@ const renderGenderChart = () => (
             <Cell key={`cell-${index}`} fill={entry.color} />
           ))}
         </Pie>
-        <Tooltip 
+        <Tooltip
           formatter={(value, name) => [`${value} orang`, name]}
-          contentStyle={{ 
-            borderRadius: '12px', 
-            border: 'none', 
+          contentStyle={{
+            borderRadius: '12px',
+            border: 'none',
             boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
             padding: '12px',
             backgroundColor: 'white'
           }}
         />
-        <Legend 
+        <Legend
           layout="horizontal"
           verticalAlign="bottom"
           align="center"
@@ -152,11 +152,11 @@ const renderGenderChart = () => (
 const renderAgeChart = () => (
   <div className="w-full h-80">
     <ResponsiveContainer>
-      <BarChart 
+      <BarChart
         data={demographicData.ageGroups}
         margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
       >
-        <XAxis 
+        <XAxis
           dataKey="name" 
           tick={{ fill: '#6b7280' }}
           axisLine={false}
@@ -204,7 +204,7 @@ const renderReligionChart = () => (
           innerRadius={70}
           paddingAngle={2}
           dataKey="value"
-          label={<CustomPieLabel cx={undefined} cy={undefined} midAngle={undefined} innerRadius={undefined} outerRadius={undefined} percent={undefined} index={undefined} name={undefined} value={undefined} />}
+          label={CustomPieLabel}
           labelLine={false}
         >
           {demographicData.religions.map((entry, index) => (
@@ -298,7 +298,7 @@ const VisionMissionSection = () => (
           <h3 className="text-xl font-semibold text-blue-800">Visi Desa</h3>
         </div>
         <blockquote className="text-gray-700 italic pl-4 border-l-2 border-blue-300">
-          "Berlandaskan Iman dan Taqwa Mewujudkan Masyarakat Cidugaleun yang Maju dan Berkualitas"
+          Berlandaskan Iman dan Taqwa Mewujudkan Masyarakat Cidugaleun yang Maju dan Berkualitas
         </blockquote>
       </motion.div>
 

@@ -438,10 +438,6 @@ export default function IndeksDesaPage() {
           </div>
         </div>
       </div>
-
-      <footer className="py-6 text-center text-gray-500 text-sm border-t border-gray-100">
-        © {new Date().getFullYear()} Desa {villageProfile.name} - Sistem Informasi IDM
-      </footer>
     </div>
   );
 }

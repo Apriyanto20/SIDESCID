@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                 {/* Logo & Deskripsi */}
                 <div>
                     <div className="text-xl font-bold mb-3">SIDES<span className="text-teal-300">CID</span></div>
-                    <p className="text-sm leading-relaxed mb-4 text-gray-300">
+                    <p className="text-sm leading-relaxed mb-4 text-gray-300 text-justify">
                         Sistem Informasi Desa Cidugaleun membantu masyarakat mengakses informasi dan layanan desa secara cepat dan transparan.
                     </p>
                     <div className="flex space-x-4 text-xl text-gray-100">
@@ -62,8 +62,8 @@ const Footer: React.FC = () => {
                     <h4 className="text-sm font-semibold text-white mb-3">Kontak</h4>
                     <ul className="text-sm text-gray-300 space-y-2">
                         <li>Desa Cidugaleun</li>
-                        <li>Kecamatan Cigemblong</li>
-                        <li>Kabupaten Lebak, Banten</li>
+                        <li>Kecamatan Cigalontang</li>
+                        <li>Kabupaten Tasikmalaya</li>
                         <li>Email: info@cidugaleun.desa.id</li>
                     </ul>
                 </div>

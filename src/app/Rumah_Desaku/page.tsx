@@ -59,7 +59,7 @@ export default function RumahDesaku() {
 
   const carouselImages = [
     {
-      src: "/images/desaku1.JPG",
+      src: "/images/curug-ciparay.JPG",
       alt: "Pemandangan Desa Cidugaleun",
       caption: "Keindahan Alam Desa Cidugaleun"
     },
@@ -109,7 +109,7 @@ export default function RumahDesaku() {
             <span className="text-blue-600 font-medium">Rumah Data Kependudukan</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Portal Data <span className="text-blue-600">Desa Cidugaleun</span>
+            Portal Data Desa Cidugaleun
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Sistem terintegrasi untuk pengelolaan data kependudukan dan pembangunan desa
@@ -147,7 +147,7 @@ export default function RumahDesaku() {
                       Visi Desa Kita
                     </h3>
                     <p className="text-gray-600">
-                      "Mewujudkan Desa Cidugaleun sebagai desa yang transparan, informatif, dan partisipatif melalui penyajian data yang akurat, terbuka, dan mudah diakses oleh seluruh lapisan masyarakat."                    </p>
+                      Mewujudkan Desa Cidugaleun sebagai desa yang transparan, informatif, dan partisipatif melalui penyajian data yang akurat, terbuka, dan mudah diakses oleh seluruh lapisan masyarakat.                    </p>
                   </div>
                 </div>
               </div>
