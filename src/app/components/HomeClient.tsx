@@ -70,7 +70,7 @@ export default function HomePage() {
     return (
         <div className="relative min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <section className="relative h-screen bg-[url('/image/hero-desa.jpg')] bg-cover bg-center flex items-center justify-center text-center px-6">
+            <section className="relative h-screen bg-[url('/image/Desa.png')] bg-cover bg-center flex items-center justify-center text-center px-6">
                 <div className="absolute inset-0 bg-black/30"></div>
                 <div className="z-10 relative">
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg mb-4">
