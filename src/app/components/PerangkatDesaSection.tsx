@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 import FloatingProfileCard from "./FloatingProfileCard";
 
 const perangkatDesa = [
-  { name: "Ahmad Rudi", role: "Kepala Desa", src: "/image/logo.png" },
-  { name: "Rina Marlina", role: "Sekretaris Desa", src: "/image/logo.png" },
-  { name: "Tina Nurhayati", role: "Kasi Pemerintahan", src: "/image/logo.png" },
-  { name: "Dedi Sunarya", role: "Kasi Pelayanan", src: "/image/logo.png" },
-  { name: "Siti Aisyah", role: "Kaur Keuangan", src: "/image/logo.png" },
-  { name: "Ujang Saputra", role: "Kaur Umum", src: "/image/logo.png" },
-  { name: "Nina Melani", role: "Kaur Perencanaan", src: "/image/logo.png" },
-  { name: "Rahmat Hidayat", role: "Kepala Dusun I", src: "/image/logo.png" },
-  { name: "Desi Marlina", role: "Kepala Dusun II", src: "/image/logo.png" },
-  { name: "Joko Priyono", role: "Staff Pelayanan Umum", src: "/image/logo.png" },
-  { name: "Dewi Kartika", role: "Operator SIKS-NG", src: "/image/logo.png" },
-  { name: "Yuni Astuti", role: "Pendamping PKH", src: "/image/logo.png" },
-  { name: "Andi Pratama", role: "Petugas Linmas", src: "/image/logo.png" },
-  { name: "Sopian", role: "Satlinmas", src: "/image/logo.png" },
+  { name: "IKEU FIRMANSYAH", role: "KEPALA DESA", src: "/image/logo.png" },
+  { name: "ERMA HERMAWAN, S.Pd", role: "SEKRETARIS DESA", src: "/image/logo.png" },
+  { name: "WAHYU HIDAYAT", role: "KAUR KEUANGAN", src: "/image/logo.png" },
+  { name: "CUCU SRI WAHYUNI, A.Mk", role: "KAUR T U", src: "/image/logo.png" },
+  { name: "CEPI IMAM FAUZI", role: "KAUR PERENCANAAN", src: "/image/logo.png" },
+  { name: "WARMAN", role: "KASI PEMERINTAHAN", src: "/image/logo.png" },
+  { name: "BUDIMAN TORO, S.Pd", role: "KASI KESRA", src: "/image/logo.png" },
+  { name: "AEP SAEPUDIN", role: "KASI PELAYANAN", src: "/image/logo.png" },
+  { name: "ENGKUS KUSNADI", role: "KEPALA WILAYAH 001", src: "/image/logo.png" },
+  { name: "NUNU", role: "KEPALA WILAYAH 002", src: "/image/logo.png" },
+  { name: "NANDANG HERMAWAN", role: "KEPALA WILAYAH 003", src: "/image/logo.png" },
+  { name: "DEDE PUAD", role: "KEPALA WILAYAH 004", src: "/image/logo.png" },
+  { name: "ANIS SURYANI", role: "STAF KEUANGAN", src: "/image/logo.png" },
+  { name: "LUTFI WIJAYA KUSUMAH", role: "STAFF", src: "/image/logo.png" },
 ];
 
 export default function PerangkatDesaSection() {
