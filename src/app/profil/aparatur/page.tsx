@@ -2,6 +2,11 @@
 
 const aparaturData = [
   {
+    nama: "IKEU FIRMANSYAH",
+    jabatan: "KEPALA DESA",
+    foto: "/image/logo.png",
+  },
+  {
     nama: "ERMA HERMAWAN, S.Pd",
     jabatan: "SEKDES",
     foto: "/image/logo.png",
