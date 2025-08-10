@@ -20,19 +20,24 @@ interface MainImage {
 interface ThumbImage {
     src: string;
     alt: string;
-    type: 'nature' | 'activity';
+    type: 'nature' | 'activity' | 'product';
 }
 
 const mainImages: MainImage[] = [
     {
         src: '/image/Ciparay3.jpg',
         alt: 'Curug Ciparay',
-        description: 'Hamparan sawah menghijau dengan latar pegunungan'
+        description: 'Air Terjun Curug Ciparay'
     },
     {
         src: '/images/curug-payung.png',
         alt: 'Curug Payung',
-        description: 'Air terjun setinggi 15 meter dengan pemandangan hutan alami'
+        description: 'Air terjun Curug Payung'
+    },
+    {
+        src: '/image/bola.jpg',
+        alt: 'Team Bola',
+        description: 'Pertandingan Bola antar Dusun'
     }
 ];
 
@@ -44,14 +49,24 @@ const thumbImages: ThumbImage[] = [
     },
     {
         src: '/image/Kemasan Kopi.jpg',
-        alt: 'Seni Budaya Lokal',
-        type: 'activity'
+        alt: 'Produk UMKM Kopi Dindingari',
+        type: 'product'
     },
     {
         src: '/image/Keripik.jpg',
-        alt: 'Potret Warga',
-        type: 'activity'
-    }
+        alt: 'Produk UMKM',
+        type: 'product'
+    },
+    {
+        src: '/image/anyaman.jpeg',
+        alt: 'Kerajinan Anyaman',
+        type: 'product'
+    },
+    {
+        src: '/image/cabe.jpg',
+        alt: 'Hasil Pertanian Cabe',
+        type: 'product'
+    },
 ];
 
 export default function HomePage() {
@@ -63,7 +78,20 @@ export default function HomePage() {
 
     const handleThumbnailClick = (index: number) => {
         if (swiperRef.current) {
-            swiperRef.current.slideTo(index);
+            swiperRef.current.slideTo(index % mainImages.length);
+        }
+    };
+
+    const getBadgeStyle = (type: string) => {
+        switch (type) {
+            case 'nature':
+                return { bg: 'bg-green-600/90', text: 'Alam' };
+            case 'activity':
+                return { bg: 'bg-blue-600/90', text: 'Kegiatan' };
+            case 'product':
+                return { bg: 'bg-amber-600/90', text: 'Produk' };
+            default:
+                return { bg: 'bg-gray-600/90', text: 'Lainnya' };
         }
     };
 
@@ -148,32 +176,35 @@ export default function HomePage() {
 
                     {/* Portrait Thumbnails Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
-                        {thumbImages.map((image, index) => (
-                            <div
-                                key={index}
-                                className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer"
-                                data-aos="fade-up"
-                                data-aos-delay={index * 100}
-                                onClick={() => handleThumbnailClick(index % mainImages.length)}
-                            >
-                                <Image
-                                    src={image.src}
-                                    alt={image.alt}
-                                    fill
-                                    className="object-cover hover:scale-105 transition-transform duration-300"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent flex items-end p-4">
-                                    <div>
-                                        <p className="text-white font-semibold text-sm md:text-base">
-                                            {image.alt}
-                                        </p>
-                                        <span className={`inline-block mt-1 px-2 py-1 rounded-full text-xs font-medium ${image.type === 'nature' ? 'bg-green-600/90 text-white' : 'bg-blue-600/90 text-white'}`}>
-                                            {image.type === 'nature' ? 'Alam' : 'Kegiatan'}
-                                        </span>
+                        {thumbImages.map((image, index) => {
+                            const badgeStyle = getBadgeStyle(image.type);
+                            return (
+                                <div
+                                    key={index}
+                                    className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+                                    data-aos="fade-up"
+                                    data-aos-delay={index * 100}
+                                    onClick={() => handleThumbnailClick(index)}
+                                >
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-cover hover:scale-105 transition-transform duration-300"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent flex items-end p-4">
+                                        <div>
+                                            <p className="text-white font-semibold text-sm md:text-base">
+                                                {image.alt}
+                                            </p>
+                                            <span className={`inline-block mt-1 px-2 py-1 rounded-full text-xs font-medium ${badgeStyle.bg} text-white`}>
+                                                {badgeStyle.text}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
