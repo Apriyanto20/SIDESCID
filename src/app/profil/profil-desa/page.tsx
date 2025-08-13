@@ -96,20 +96,26 @@ export default function ProfilDesaCidugaleun() {
           </h2>
           <div className="space-y-4 text-justify leading-relaxed text-lg text-gray-700 font-serif">
             <p>
-              Cidugaleun adalah desa di kecamatan Cigalontang, Tasikmalaya, Jawa Barat, Indonesia. Di sebelah barat berbatasan 
-              dengan Kecamatan Sariwangi. Desa ini berada di kaki Gunung Karacak dan Gunung Dinding Ari.
+              Cidugaleun. Asal muasal katanya dari Kedugalan, yang artinya adalah kekuatan. Ya, desa ini terkenal dengan orang-orang berilmu di dalamnya, dengan kekuatan tak tertandingi. 
+              Tidak bisa dipandang secara akal sehat. Ilmu-ilmu itu dimiliki oleh para leluhur. Macam-macam jenisnya. Ada yang bisa menggunakan betisnya sebagai penggantu kayu bakar, punya kemampuan pelet, sampai ada pula yang mendapat julukan Sangkuriangnya Cidugaleun, karena bisa menggarap berhektar-hektar sawah tengah malam seorang diri.
             </p>
             <p>
-              Desa ini memiliki banyak pemandangan yang memanjakan mata, terutama bila dilihat dari Jembatan Cisok atau biasa 
-              disebut cekdam. Di desa ini terdapat beberapa tempat wisata, salah satunya adalah Curug Ciparay yang masih belum 
-              banyak diketahui wisatawan.
+              Ternyata hal ini tidak asing lagi di telinga penikmat ilmu-ilmu tersebut untuk kepentingan duniawi. Tak jarang pendatang melancong ke Cidugaleun untuk kepentingan jodoh, harta, dan kedudukan. Orang Banten yang hendak menaikan ilmu, pasti ke desa ini dan menginap sampai 4 hari 4 malam. Hanya saja, kabarnya kemampuan ini tidak bisa dinikmati warga Cidugaleun sendiri.
             </p>
             <p>
-              Di Desa Cidugaleun terdapat 2 TBM Aktif yang sudah terdaftar di PNFI dan Dinas Pendidikan Dan Kebudayaan Kabupaten 
-              Tasikmalaya yaitu TBM PPM Al Muqorrobin (2012) dan TBM Ligar Luang (2018).
+              Alkisah namanya Mahdugal Kawasa. Seorang wanita yang cantiknya bukan main. Konon panjang rambutnya lebih dari 10 meter panjangnya. Kabarnya ia adalah salah satu dari penyebar agama Islam di Pulau Jawa, di luar dari yang sering kita dengar, Wali Songo. Meskipun perempuan, kekuatannya bukan main. Banyak sekali yang mau meminangnya,
+              hanya saja terlalu banyak halangan yang menjadikan peminang bahkan tidak bisa menginjakan kaki di tanah Cidugaleun. Yang terkuat adalah Burangrang, itu pun belum sampai benar-benar bertemu dengan Mahdugal.
             </p>
             <p>
-              Kedua TBM ini bergerak di bidang keaksaraan dan Pembudayaan Literasi dan Numerasi pada jenjang TK, PAUD, SD, dan SMP.
+              Hal ini menjadi salah satu kepercayaan masyarakat Cidugaleun, bahwa memanjangkan rambut bagi wanita seperti diharamkan. Selain itu seperti menjadi semacam sumpah, bahwa tidak ada satu pun warga Cidugaleun yang berparas cantik atau tampan.
+              Tetapi ketika mereka keluar dari desa ini, katanya sih ada sesuatu yang menarik dari diri mereka. 
+            </p>
+            <p>
+              Ada lagi sebuah kepercayaan Sunda, yang kabarnya menjadi salah satu sumpah Mahdugal, bahwa rumah yang dibangun tidak diperbolehkan dengan tembok. Kalau tidak, akan kelaparan. Logisnya, ya ketika lahan sawah diambil alih untuk lahan tempat tinggal yang bertembok, bukan dengan rumah panggung, maka otomatis lahan tersebut tidak bisa digunakan untuk menghasilkan padi.
+            </p>
+            
+            <p>
+
             </p>
           </div>
         </motion.div>
