@@ -200,7 +200,7 @@ export default function GeografisPage() {
                                         </span>
                                         <div>
                                             <h4 className="font-medium text-gray-800">Utara</h4>
-                                            <p className="text-gray-600">Kab. Sariwangi</p>
+                                            <p className="text-gray-600">Desa Sukaharja Kecamatan Sariwangi</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
@@ -209,7 +209,7 @@ export default function GeografisPage() {
                                         </span>
                                         <div>
                                             <h4 className="font-medium text-gray-800">Timur</h4>
-                                            <p className="text-gray-600">Kecamatan Mangunreja</p>
+                                            <p className="text-gray-600">Desa Sirnaputra Kecamatan Cigalontang.</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
@@ -218,7 +218,7 @@ export default function GeografisPage() {
                                         </span>
                                         <div>
                                             <h4 className="font-medium text-gray-800">Selatan</h4>
-                                            <p className="text-gray-600">Kecamatan Salawu</p>
+                                            <p className="text-gray-600">Desa Sirnaputra Kecamatan Cigalontang</p>
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
@@ -227,7 +227,7 @@ export default function GeografisPage() {
                                         </span>
                                         <div>
                                             <h4 className="font-medium text-gray-800">Barat</h4>
-                                            <p className="text-gray-600">Kecamatan Garut</p>
+                                            <p className="text-gray-600">Desa Parentas Kecamatan Cigalontang.</p>
                                         </div>
                                     </li>
                                 </ul>
