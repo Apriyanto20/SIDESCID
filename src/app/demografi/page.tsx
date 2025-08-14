@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -157,29 +156,29 @@ const renderAgeChart = () => (
         margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
       >
         <XAxis
-          dataKey="name" 
+          dataKey="name"
           tick={{ fill: '#6b7280' }}
           axisLine={false}
           tickLine={false}
         />
-        <YAxis 
+        <YAxis
           tick={{ fill: '#6b7280' }}
           axisLine={false}
           tickLine={false}
         />
-        <Tooltip 
+        <Tooltip
           cursor={{ fill: '#f3f4f6' }}
-          contentStyle={{ 
-            borderRadius: '12px', 
-            border: 'none', 
+          contentStyle={{
+            borderRadius: '12px',
+            border: 'none',
             boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
             padding: '12px',
             backgroundColor: 'white'
           }}
           formatter={(value) => [`${value} orang`]}
         />
-        <Bar 
-          dataKey="value" 
+        <Bar
+          dataKey="value"
           radius={[6, 6, 0, 0]}
           animationDuration={1500}
         >
@@ -211,17 +210,17 @@ const renderReligionChart = () => (
             <Cell key={`religion-cell-${index}`} fill={entry.color} />
           ))}
         </Pie>
-        <Tooltip 
+        <Tooltip
           formatter={(value, name) => [`${value} orang`, name]}
-          contentStyle={{ 
-            borderRadius: '12px', 
-            border: 'none', 
+          contentStyle={{
+            borderRadius: '12px',
+            border: 'none',
             boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
             padding: '12px',
             backgroundColor: 'white'
           }}
         />
-        <Legend 
+        <Legend
           layout="horizontal"
           verticalAlign="bottom"
           align="center"
@@ -252,9 +251,9 @@ const renderOccupationList = () => (
           <div>
             <span className="font-medium text-gray-800">{item.name}</span>
             <div className="flex items-center mt-1">
-              <div 
-                className="h-2 rounded-full mr-2" 
-                style={{ 
+              <div
+                className="h-2 rounded-full mr-2"
+                style={{
                   width: `${(item.value / Math.max(...demographicData.occupations.map(o => o.value))) * 100}%`,
                   backgroundColor: item.color
                 }}
@@ -278,56 +277,11 @@ const VisionMissionSection = () => (
     transition={{ delay: 0.5 }}
     className="bg-white rounded-2xl shadow-md p-8 mb-8 border border-blue-100"
   >
-    <div className="text-center mb-8">
+    <div className="text-center mb-8 mt-8">
       <h2 className="text-3xl font-bold text-blue-800 mb-2">Desa Cidugaleun</h2>
       <p className="text-lg text-gray-600">
         Kecamatan Cigalontang, Kabupaten Tasikmalaya
       </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-8">
-      {/* Vision Card */}
-      <motion.div 
-        whileHover={{ scale: 1.02 }}
-        className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500"
-      >
-        <div className="flex items-center mb-4">
-          <div className="bg-blue-100 p-2 rounded-lg mr-4">
-            <FiAward className="text-blue-600" size={24} />
-          </div>
-          <h3 className="text-xl font-semibold text-blue-800">Visi Desa</h3>
-        </div>
-        <blockquote className="text-gray-700 italic pl-4 border-l-2 border-blue-300">
-          Berlandaskan Iman dan Taqwa Mewujudkan Masyarakat Cidugaleun yang Maju dan Berkualitas
-        </blockquote>
-      </motion.div>
-
-      {/* Mission Card */}
-      <motion.div 
-        whileHover={{ scale: 1.02 }}
-        className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500"
-      >
-        <div className="flex items-center mb-4">
-          <div className="bg-blue-100 p-2 rounded-lg mr-4">
-            <FiFileText className="text-blue-600" size={24} />
-          </div>
-          <h3 className="text-xl font-semibold text-blue-800">Misi Desa</h3>
-        </div>
-        <ul className="space-y-3 pl-2 text-gray-700">
-          <li className="flex items-start">
-            <span className="text-blue-500 mr-2">•</span>
-            <span>Meningkatkan sumber daya manusia yang berakhlakul karimah dan berkualitas serta mampu mengawal pembangunan untuk kemaslahatan masyarakat</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-blue-500 mr-2">•</span>
-            <span>Meningkatkan pemerintah yang baik, bersih dan professional serta empati terhadap pelayanan kepentingan masyarakat</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-blue-500 mr-2">•</span>
-            <span>Meningkatkan koordinasi dengan pemerintah pusat dan kabupaten untuk mewujudkan pemerataan dan keseimbangan pembangunan</span>
-          </li>
-        </ul>
-      </motion.div>
     </div>
   </motion.div>
 );
@@ -338,10 +292,10 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-blue-50 p-4 md:p-8">
       <VisionMissionSection />
-      
+
       <div className="bg-white rounded-2xl shadow-md p-6 mb-8">
         <h2 className="text-2xl font-bold text-blue-800 mb-6">Data Demografi Desa</h2>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-blue-100 p-4 rounded-xl">
             <div className="flex items-center">
@@ -456,7 +410,7 @@ export default function Dashboard() {
                     <BarChart data={demographicData.education}>
                       <XAxis dataKey="name" />
                       <YAxis />
-                      <Tooltip 
+                      <Tooltip
                         formatter={(value) => [`${value} orang`]}
                       />
                       <Bar dataKey="value" fill={BLUE_PRIMARY} />
