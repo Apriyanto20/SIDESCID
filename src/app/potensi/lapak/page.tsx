@@ -31,40 +31,28 @@ function useDebounce<T>(value: T, delay = 300): T {
 const produkDesa: Produk[] = [
   {
     id: 1,
-    nama: "Beras Lokal 5Kg",
-    harga: 50000,
-    deskripsi: "Beras putih hasil panen petani lokal, pulen dan tanpa pestisida.",
-    gambar: "/image/beras.png",
+    nama: "Kopi Arabica Dindingari",
+    harga: 60000,
+    deskripsi: "Kopi Arabica premium dari kebun lokal, aroma khas pegunungan.",
+    gambar: "/image/kemasankopi.jpg",
     wa: "6281234567890",
-    penjual: "Pak Ujang",
-    lokasi: "Dusun Cisereh",
+    penjual: "Yogaswara atau Udep",
+    lokasi: "Dusun Babakan",
     cerita:
-      "Pak Ujang telah menggarap sawah selama 30 tahun. Ia menanam padi dengan metode tradisional, di lahan warisan keluarga. Beras ini hasil panen musim kemarau, lebih pulen dan harum.",
+      "Kopi Khas Cidugaleun",
   },
   {
     id: 2,
-    nama: "Madu Hutan Asli",
-    harga: 75000,
-    deskripsi: "Madu alami tanpa campuran dari hutan sekitar, kaya manfaat.",
-    gambar: "/image/madu.png",
-    wa: "6281234567890",
-    penjual: "Bu Ani",
-    lokasi: "Hutan Lereng Gunung",
-    cerita:
-      "Bu Ani adalah satu-satunya pengumpul madu liar di desa. Ia mengambil madu secara lestari, hanya saat musim berbunga. Madu ini tidak dipanaskan, jadi khasiatnya tetap utuh.",
-  },
-  {
-    id: 3,
-    nama: "Keripik Singkong",
+    nama: "Keripik Hervia Mandiri",
     harga: 10000,
-    deskripsi: "Cocok untuk camilan, gurih dan renyah tanpa pengawet.",
-    gambar: "/image/keripik.png",
+    deskripsi: "Berbagai macam olahan keripik dengan total 15 macam rasa dan olahan",
+    gambar: "/image/hervia.jpg",
     wa: "6281234567890",
-    penjual: "Kelompok Kartini RW 3",
-    lokasi: "Kampung Nanggerang",
+    penjual: "Bu Susilawati",
+    lokasi: "Kampung Pajagan",
     cerita:
-      "Dibuat oleh ibu-ibu PKK RW 3, keripik ini diproduksi setiap pagi. Singkongnya dari kebun sendiri, digoreng dengan minyak kelapa asli. Cocok buat camilan anak atau teman ngopi.",
-  },
+      "Berbagai macam olahan makanan ringan",
+  }
 ];
 
 // ---------- Formatter ----------
