@@ -35,7 +35,7 @@ const mainImages: MainImage[] = [
         description: 'Air terjun Curug Payung'
     },
     {
-        src: '/image/bola.jpg',
+        src: '/image/bola4.jpg',
         alt: 'Team Bola',
         description: 'Pertandingan Bola antar Dusun'
     }
@@ -48,7 +48,7 @@ const thumbImages: ThumbImage[] = [
         type: 'activity'
     },
     {
-        src: '/image/Kemasan Kopi.jpg',
+        src: '/image/kemasankopi.jpg',
         alt: 'Produk UMKM Kopi Dindingari',
         type: 'product'
     },
