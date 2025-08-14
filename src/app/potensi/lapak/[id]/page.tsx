@@ -25,10 +25,10 @@ type Produk = {
 const produkDesa: Produk[] = [
   {
     id: 1,
-    nama: "Beras Lokal 5Kg",
-    harga: 50000,
-    deskripsi: "Beras putih hasil panen petani lokal, pulen dan tanpa pestisida.",
-    gambar: "/image/beras.png",
+    nama: "Kopi Arabica Dindingari",
+    harga: 60000,
+    deskripsi: "Kopi Arabica premium dari kebun lokal, aroma khas pegunungan.",
+    gambar: "/image/kemasankopi.jpg",
     wa: "6281234567890",
     penjual: "Pak Ujang",
     lokasi: "Dusun Cisereh, Desa Cidugaleun",
@@ -39,35 +39,21 @@ const produkDesa: Produk[] = [
     tips: "Simpan di tempat kering dan tertutup. Cocok untuk nasi uduk atau lontong.",
   },
   {
+  
     id: 2,
-    nama: "Madu Hutan Asli",
-    harga: 75000,
-    deskripsi: "Madu alami tanpa campuran dari hutan sekitar, kaya manfaat.",
-    gambar: "/image/madu.png",
+    nama: "Keripik Hervia Mandiri",
+    harga: 10000,
+    deskripsi: "Berbagai macam olahan keripik dengan total 15 macam rasa dan olahan",
+    gambar: "/image/hervia.jpg",
     wa: "6281234567890",
-    penjual: "Bu Ani",
-    lokasi: "Hutan Lereng Gunung, Jalur Pendakian",
+    penjual: "Bu Susilawati",
+    lokasi: "Kampung Pajagan",
     cerita:
-      "Bu Ani adalah satu-satunya pengumpul madu liar di desa. Ia mengambil madu secara lestari, hanya saat musim berbunga. Madu ini tidak dipanaskan, jadi khasiatnya tetap utuh.",
+      "Berbagai macam olahan makanan ringan",
     bahan: "100% nektar bunga hutan, tanpa tambahan gula atau air.",
     proses: "Dikumpulkan dari sarang alami lebah Trigona, disaring alami tanpa dipasteurisasi.",
     tips: "Minum 1 sendok pagi hari sebelum sarapan. Tahan hingga 2 tahun jika disimpan tertutup.",
-  },
-  {
-    id: 3,
-    nama: "Keripik Singkong",
-    harga: 10000,
-    deskripsi: "Cocok untuk camilan, gurih dan renyah tanpa pengawet.",
-    gambar: "/image/keripik.png",
-    wa: "6281234567890",
-    penjual: "Kelompok Kartini RW 3",
-    lokasi: "Kampung Nanggerang",
-    cerita:
-      "Dibuat oleh ibu-ibu PKK RW 3, keripik ini diproduksi setiap pagi. Singkongnya dari kebun sendiri, digoreng dengan minyak kelapa asli. Cocok buat camilan anak atau teman ngopi.",
-    bahan: "Singkong segar, garam, minyak kelapa, bumbu rempah alami.",
-    proses: "Dipotong tipis, direndam, digoreng 2 kali agar renyah, lalu dikemas manual.",
-    tips: "Jika kurang renyah, bisa dipanaskan sebentar di oven. Tahan 2 minggu.",
-  },
+  }
 ];
 
 // ---------- Utility ----------
