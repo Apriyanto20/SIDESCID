@@ -58,11 +58,6 @@ const thumbImages: ThumbImage[] = [
         type: 'product'
     },
     {
-        src: '/image/buncis.jpg',
-        alt: 'Hasil Pertanian Buncis',
-        type: 'product'
-    },
-    {
         src: '/image/Pendakian3.jpg',
         alt: 'Pendakian Gunung Dindingari',
         type: 'nature'
