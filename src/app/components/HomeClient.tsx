@@ -33,11 +33,6 @@ const mainImages: MainImage[] = [
         src: '/images/curug-payung.png',
         alt: 'Curug Payung',
         description: 'Air terjun Curug Payung'
-    },
-    {
-        src: '/image/bola4.jpg',
-        alt: 'Team Bola',
-        description: 'Pertandingan Bola antar Dusun'
     }
 ];
 
@@ -63,13 +58,13 @@ const thumbImages: ThumbImage[] = [
         type: 'product'
     },
     {
-        src: '/image/cabe.jpg',
+        src: '/image/buncis.jpg',
         alt: 'Hasil Pertanian Cabe',
         type: 'product'
     },
     {
         src: '/image/Pendakian3.jpg',
-        alt: 'Pendakian Gunung Dindinari',
+        alt: 'Pendakian Gunung Dindingari',
         type: 'nature'
     },
 ];
