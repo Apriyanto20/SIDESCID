@@ -59,14 +59,14 @@ const thumbImages: ThumbImage[] = [
     },
     {
         src: '/image/buncis.jpg',
-        alt: 'Hasil Pertanian Cabe',
+        alt: 'Hasil Pertanian Buncis',
         type: 'product'
     },
     {
         src: '/image/Pendakian3.jpg',
         alt: 'Pendakian Gunung Dindingari',
         type: 'nature'
-    },
+    }
 ];
 
 export default function HomePage() {

@@ -59,11 +59,6 @@ export default function RumahDesaku() {
 
   const carouselImages = [
     {
-      src: "/image/ciparay3.jpg",
-      alt: "Tempat Wisata Curug Ciparay",
-      caption: "Keindahan Alam Desa Cidugaleun"
-    },
-    {
       src: "/image/p3.jpg",
       alt: "Pemandangan Alam Desa Cidugaleun",
       caption: "Keindahan Alam Desa Cidugaleun"
