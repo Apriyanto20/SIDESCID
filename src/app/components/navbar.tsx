@@ -82,7 +82,7 @@
                         <Link href="/demografi" className="hover:text-teal-600 transition">Demografi</Link>
                         <Link href="/geografis" className="hover:text-teal-600 transition">Geografis</Link>
                         <Link href="/idm" className="hover:text-teal-600 transition">IDM</Link>
-                        <Link href="/" className="hover:text-teal-600 transition">Laporan APDES</Link>
+                        <Link href="/apbdes" className="hover:text-teal-600 transition">Laporan APBDES</Link>
 
                         <div className="relative">
                             <button
@@ -109,7 +109,6 @@
                         <Link href="/regulasi" className="hover:text-teal-600 transition">Regulasi</Link>
                         <Link href="/berita" className="hover:text-teal-600 transition">Berita</Link>
                         <Link href="/Rumah_Desaku" className="hover:text-teal-600 transition">Rumah Dataku</Link>
-                        <Link href="/" className="hover:text-teal-600 transition">SP4N LAPOR</Link>
                     </nav>
                 </div>
 
@@ -151,7 +150,6 @@
                             <li><Link href="/regulasi">Regulasi</Link></li>
                             <li><Link href="/berita">Berita</Link></li>
                             <li><Link href="/Rumah_Desaku">Rumah Dataku</Link></li>
-                            <li><Link href="/">SP4N LAPOR</Link></li>
                         </ul>
                     </div>
                 )}

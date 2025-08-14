@@ -67,6 +67,11 @@ const thumbImages: ThumbImage[] = [
         alt: 'Hasil Pertanian Cabe',
         type: 'product'
     },
+    {
+        src: '/image/Pendakian3.jpg',
+        alt: 'Pendakian Gunung Dindinari',
+        type: 'nature'
+    },
 ];
 
 export default function HomePage() {

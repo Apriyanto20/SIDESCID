@@ -150,11 +150,11 @@ export default function ProfilDesaCidugaleun() {
           <h2 className="text-4xl font-extrabold mb-12 tracking-widest uppercase font-serif">Fakta Singkat Desa</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="bg-white text-blue-900 p-8 rounded-3xl shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform transform-gpu">
-              <h3 className="text-4xl font-black mb-2 font-sans tracking-widest">± 1.008 ha</h3>
+              <h3 className="text-4xl font-black mb-2 font-sans tracking-widest">± 1,179.37 ha</h3>
               <p className="text-lg font-medium uppercase tracking-wide">Luas Wilayah 🌿</p>
             </div>
             <div className="bg-white text-blue-900 p-8 rounded-3xl shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform transform-gpu">
-              <h3 className="text-4xl font-black mb-2 font-sans tracking-widest">± 4.935 jiwa</h3>
+              <h3 className="text-4xl font-black mb-2 font-sans tracking-widest">± 6.378 jiwa</h3>
               <p className="text-lg font-medium uppercase tracking-wide">Jumlah Penduduk 👥</p>
             </div>
             <div className="bg-white text-blue-900 p-8 rounded-3xl shadow-2xl hover:scale-105 hover:-translate-y-2 transition-transform transform-gpu">

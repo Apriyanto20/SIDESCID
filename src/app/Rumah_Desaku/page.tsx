@@ -59,24 +59,14 @@ export default function RumahDesaku() {
 
   const carouselImages = [
     {
-      src: "/images/curug-ciparay.JPG",
-      alt: "Pemandangan Desa Cidugaleun",
+      src: "/image/ciparay3.jpg",
+      alt: "Tempat Wisata Curug Ciparay",
       caption: "Keindahan Alam Desa Cidugaleun"
     },
     {
-      src: "/images/desaku2.jpg",
-      alt: "Kegiatan Warga Desa",
-      caption: "Gotong Royong Warga Desa"
-    },
-    {
-      src: "/images/desaku3.jpg",
-      alt: "Fasilitas Desa",
-      caption: "Fasilitas Umum Desa Cidugaleun"
-    },
-    {
-      src: "/images/desaku4.jpg",
-      alt: "Potensi Desa",
-      caption: "Potensi Ekonomi Desa"
+      src: "/image/p3.jpg",
+      alt: "Pemandangan Alam Desa Cidugaleun",
+      caption: "Keindahan Alam Desa Cidugaleun"
     }
   ];
 
@@ -98,8 +88,6 @@ export default function RumahDesaku() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navbar */}
-      {/* <Navbar /> */}
 
       {/* Main Content */}
       <main className="pt-24 pb-12 px-4">
@@ -139,15 +127,6 @@ export default function RumahDesaku() {
                     </h3>
                     <p className="text-gray-600">
                       Desa Cidugaleun merupakan salah satu desa yang terletak di Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat. Desa ini dikenal dengan lingkungan alamnya yang asri, suasana yang sejuk, serta masyarakatnya yang ramah dan menjunjung tinggi nilai-nilai kebersamaan.                    </p>
-                  </div>
-
-                  <div className="p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                      <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-                      Visi Desa Kita
-                    </h3>
-                    <p className="text-gray-600">
-                      Mewujudkan Desa Cidugaleun sebagai desa yang transparan, informatif, dan partisipatif melalui penyajian data yang akurat, terbuka, dan mudah diakses oleh seluruh lapisan masyarakat.                    </p>
                   </div>
                 </div>
               </div>
