@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import FloatingProfileCard from "./FloatingProfileCard";
 
 const perangkatDesa = [
-  { name: "IKEU FIRMANSYAH", role: "KEPALA DESA", src: "/image/aparatur/" },
+  { name: "IKEU FIRMANSYAH", role: "KEPALA DESA", src: "/image/aparatur/pa-kades.jpg" },
   { name: "ERMA HERMAWAN, S.Pd", role: "SEKRETARIS DESA", src: "/image/aparatur/erma.jpg" },
   { name: "WAHYU HIDAYAT", role: "KAUR KEUANGAN", src: "/image/aparatur/wahyu.jpg" },
   { name: "CUCU SRI WAHYUNI, A.Mk", role: "KAUR T U", src: "/image/aparatur/cucu.jpg" },
