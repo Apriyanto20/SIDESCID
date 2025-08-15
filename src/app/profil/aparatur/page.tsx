@@ -81,8 +81,8 @@ export default function AparaturDesa() {
       style={{ backgroundImage: "url('/image/bg-desa.jpg')" }} // ganti dengan gambar background desa kamu
     >
       {/* Lapisan transparan untuk keterbacaan teks */}
-      <div className="bg-black bg-opacity-50 rounded-2xl p-6 md:p-10">
-        <h1 className="text-4xl font-bold text-center text-white mb-10 drop-shadow-lg">
+      <div className="bg-opacity-50 rounded-2xl p-6 md:p-10">
+        <h1 className="text-4xl font-bold text-center text-black mb-10 drop-shadow-lg">
           Struktur Aparatur Desa Cidugaleun
         </h1>
 

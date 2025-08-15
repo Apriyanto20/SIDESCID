@@ -29,17 +29,17 @@ const produkDesa: Produk[] = [
     harga: 60000,
     deskripsi: "Kopi Arabica premium dari kebun lokal, aroma khas pegunungan.",
     gambar: "/image/kemasankopi.jpg",
-    wa: "6281234567890",
-    penjual: "Pak Ujang",
-    lokasi: "Dusun Cisereh, Desa Cidugaleun",
+    wa: "6285722565900",
+    penjual: "Yogaswara",
+    lokasi: "Dusun Babakan, Desa Cidugaleun",
     cerita:
-      "Pak Ujang telah menggarap sawah selama 30 tahun. Ia menanam padi dengan metode tradisional, di lahan warisan keluarga. Beras ini hasil panen musim kemarau, lebih pulen dan harum.",
-    bahan: "Padi lokal varietas Cisadane, air dari irigasi alami, tanpa pupuk kimia.",
-    proses: "Ditanam secara manual, dipanen saat matang penuh, lalu digiling dengan alat desa.",
-    tips: "Simpan di tempat kering dan tertutup. Cocok untuk nasi uduk atau lontong.",
+      "-",
+    bahan: "100% Kopi lokal dengan aroma khasnya",
+    proses: "Proses pembuatan kopi dimulai dengan menyiapkan biji kopi yang sudah disangrai, kemudian digiling sesuai tingkat kehalusan yang diinginkan. Bubuk kopi tersebut diseduh menggunakan air panas dengan suhu yang tepat, lalu diaduk perlahan agar aroma dan rasa kopi keluar secara optimal. Setelah itu, kopi disaring atau disajikan langsung sesuai metode seduh yang digunakan, dan siap dinikmati.",
+    tips: "Untuk mendapatkan rasa dan aroma kopi yang maksimal, gunakan biji kopi segar yang baru disangrai. Biji kopi yang segar menyimpan cita rasa terbaik, terutama jika disimpan dengan benar di wadah kedap udara dan dijauhkan dari cahaya maupun kelembapan. Sebelum menyeduh, giling biji kopi sesuai metode yang digunakan. Misalnya, gilingan kasar cocok untuk french press, gilingan sedang untuk pour over, dan gilingan halus untuk espresso. Gunakan air bersih berkualitas baik, karena air yang digunakan akan memengaruhi rasa kopi secara langsung. Perhatikan juga suhu air, idealnya berada di kisaran 90–96°C agar rasa kopi tidak menjadi terlalu pahit. Takaran juga berperan penting. Umumnya, gunakan 1–2 sendok makan bubuk kopi untuk setiap 180 ml air. Waktu seduh harus diperhatikan; seduhan yang terlalu cepat akan terasa hambar, sedangkan yang terlalu lama akan terasa pahit. Terakhir, jangan ragu untuk bereksperimen dengan berbagai metode seduh seperti V60, Aeropress, Moka pot, atau French press, hingga menemukan rasa kopi yang paling sesuai dengan selera.",
   },
   {
-  
+
     id: 2,
     nama: "Keripik Hervia Mandiri",
     harga: 10000,
