@@ -9,67 +9,67 @@ const aparaturData = [
   {
     nama: "ERMA HERMAWAN, S.Pd",
     jabatan: "SEKDES",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/erma.jpg",
   },
   {
     nama: "WAHYU HIDAYAT ",
     jabatan: "KAUR KEUANGAN",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/wahyu.jpg",
   },
   {
     nama: "CUCU SRI WAHYUNI, A.Mk",
     jabatan: "KAUR T U",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/cucu.jpg",
   },
    {
     nama: "CEPI IMAM FAUZI",
     jabatan: "KAUR PERENCANAAN",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/cepi.jpg",
   },
    {
     nama: "WARMAN",
     jabatan: "KASI PEMERINTAHAN",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/warman.jpg",
   },
    {
     nama: "BUDIMAN TORO, S.Pd",
     jabatan: "KASI KESRA",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/kesra.jpg",
   },
    {
     nama: "AEP SAEPUDIN",
     jabatan: "KASI PELAYANAN",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/aep.jpg",
   },
    {
     nama: "ENGKUS KUSNADI",
     jabatan: "KEPALA WILAYAH 001",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/engkus.jpg",
   },
    {
     nama: "NUNU",
     jabatan: "KEPALA WILAYAH 002",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/nunu.jpg",
   },
    {
     nama: "NANDANG HERMAWAN",
     jabatan: "KEPALA WILAYAH 003",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/nandang.jpg",
   },
    {
     nama: "DEDE PUAD",
     jabatan: "KEPALA WILAYAH 004",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/dede.jpg",
   },
    {
     nama: "ANIS SURYANI",
     jabatan: "STAF KEUANGAN",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/anis.jpg",
   },
    {
     nama: "LUTFI WIJAYA KUSUMAH",
     jabatan: "STAFF",
-    foto: "/image/logo.png",
+    foto: "/image/aparatur/lutfi.jpg",
   },
   // Tambahkan data aparatur lainnya di sini
 ];

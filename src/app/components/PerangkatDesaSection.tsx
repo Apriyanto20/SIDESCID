@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 import FloatingProfileCard from "./FloatingProfileCard";
 
 const perangkatDesa = [
-  { name: "IKEU FIRMANSYAH", role: "KEPALA DESA", src: "/image/logo.png" },
-  { name: "ERMA HERMAWAN, S.Pd", role: "SEKRETARIS DESA", src: "/image/logo.png" },
-  { name: "WAHYU HIDAYAT", role: "KAUR KEUANGAN", src: "/image/logo.png" },
-  { name: "CUCU SRI WAHYUNI, A.Mk", role: "KAUR T U", src: "/image/logo.png" },
-  { name: "CEPI IMAM FAUZI", role: "KAUR PERENCANAAN", src: "/image/logo.png" },
-  { name: "WARMAN", role: "KASI PEMERINTAHAN", src: "/image/logo.png" },
-  { name: "BUDIMAN TORO, S.Pd", role: "KASI KESRA", src: "/image/logo.png" },
-  { name: "AEP SAEPUDIN", role: "KASI PELAYANAN", src: "/image/logo.png" },
-  { name: "ENGKUS KUSNADI", role: "KEPALA WILAYAH 001", src: "/image/logo.png" },
-  { name: "NUNU", role: "KEPALA WILAYAH 002", src: "/image/logo.png" },
-  { name: "NANDANG HERMAWAN", role: "KEPALA WILAYAH 003", src: "/image/logo.png" },
-  { name: "DEDE PUAD", role: "KEPALA WILAYAH 004", src: "/image/logo.png" },
-  { name: "ANIS SURYANI", role: "STAF KEUANGAN", src: "/image/logo.png" },
-  { name: "LUTFI WIJAYA KUSUMAH", role: "STAFF", src: "/image/logo.png" },
+  { name: "IKEU FIRMANSYAH", role: "KEPALA DESA", src: "/image/aparatur/" },
+  { name: "ERMA HERMAWAN, S.Pd", role: "SEKRETARIS DESA", src: "/image/aparatur/erma.jpg" },
+  { name: "WAHYU HIDAYAT", role: "KAUR KEUANGAN", src: "/image/aparatur/wahyu.jpg" },
+  { name: "CUCU SRI WAHYUNI, A.Mk", role: "KAUR T U", src: "/image/aparatur/cucu.jpg" },
+  { name: "CEPI IMAM FAUZI", role: "KAUR PERENCANAAN", src: "/image/aparatur/cepi.jpg" },
+  { name: "WARMAN", role: "KASI PEMERINTAHAN", src: "/image/aparatur/warman.jpg" },
+  { name: "BUDIMAN TORO, S.Pd", role: "KASI KESRA", src: "/image/aparatur/kesra.jpg" },
+  { name: "AEP SAEPUDIN", role: "KASI PELAYANAN", src: "/image/aparatur/aep.jpg" },
+  { name: "ENGKUS KUSNADI", role: "KEPALA WILAYAH 001", src: "/image/aparatur/engkus.jpg" },
+  { name: "NUNU", role: "KEPALA WILAYAH 002", src: "/image/aparatur/nunu.jpg" },
+  { name: "NANDANG HERMAWAN", role: "KEPALA WILAYAH 003", src: "/image/aparatur/nandang.jpg" },
+  { name: "DEDE PUAD", role: "KEPALA WILAYAH 004", src: "/image/aparatur/dede.jpg" },
+  { name: "ANIS SURYANI", role: "STAF KEUANGAN", src: "/image/aparatur/anis.jpg" },
+  { name: "LUTFI WIJAYA KUSUMAH", role: "STAFF", src: "/image/aparatur/lutfi.jpg" },
 ];
 
 export default function PerangkatDesaSection() {
