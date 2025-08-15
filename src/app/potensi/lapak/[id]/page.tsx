@@ -47,7 +47,7 @@ const produkDesa: Produk[] = [
     gambar: "/image/hervia.jpg",
     wa: "6281234567890",
     penjual: "Bu Susilawati",
-    lokasi: "Kampung Pajagan",
+    lokasi: "Kampung Pajagan, Desa Cidugaleun",
     cerita:
       "Berbagai macam olahan makanan ringan",
     bahan: "100% nektar bunga hutan, tanpa tambahan gula atau air.",
